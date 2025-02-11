@@ -1,0 +1,285 @@
+/* Banner Styling */
+.banner {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text (if any) */
+    text-align: center; /* Center the content horizontally */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+#grimtools-logo {
+    display: block; /* Make it a block-level element to take full width */
+    margin: 0 auto; /* Center horizontally */
+    max-width: 200px; /* Adjust as needed */
+    height: auto;
+}
+
+
+#vibe-check-button {
+   
+    background-color: transparent; /* Make the button transparent */
+    position: relative;
+    z-index: 10;
+}
+
+
+      
+#divCenterText {
+    text-align: center;
+    position: relative;
+   }
+   #vibe-check-result {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: white;
+    z-index: 100; /* Ensure it appears above the button */
+    pointer-events: none; /* Optional: Allow clicks to pass through */
+}
+   #vibe-text {
+       display: inline; /* Only take up space of the text */
+   }
+        
+body {
+  margin: 0; /* Reset default body margin */
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  display: flex;       /* Use flexbox to control layout */
+  flex-direction: column; /* Stack children vertically */
+  font-family: sans-serif;
+  /* margin: 20px; Remove any body margin */
+}
+
+.content-wrapper {
+  flex: 1;           /* This will make the content take up all available space, pushing the footer down */
+  margin: 20px;      /* Add some margin/padding around content */
+}
+
+/* Tabs Styling */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: #333;  /* Darker text color */
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#trap-details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+/*Adventure styling*/
+.adventure-result {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.adventure-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+#adventure-narrative {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Location Styling */
+#location-results {
+    margin-top: 10px;
+}
+
+.location-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+#biome-select,
+#location-type-select {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Treasure Map Styling */
+#treasure-map-results {
+    margin-top: 10px;
+}
+
+.treasure-map-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.treasure-map-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 3px;
+}
+
+#treasure-narrative {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Hireling Styling */
+#hireling-results {
+    margin-top: 10px;
+}
+
+.hireling-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.hireling-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 3px;
+}
+
+#hireling-summary {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Party Bonds Styling */
+#party-bonds-results {
+    margin-top: 10px;
+}
+
+.party-bonds-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+      
+/* Monster Styling */
+#monster-results {
+    margin-top: 10px;
+}
+
+.monster-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#monster-description {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+    
+
+/* Path Events Styling */
+#path-event-results {
+    margin-top: 10px;
+}
+
+.path-event-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+
+/* Loot Generator Styling */
+#loot-results {
+    margin-top: 10px;
+}
+
+.loot-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.footer {
+    /* background-color: #000; Remove the background color */
+    color: #fff;           /* Optional: White text color if you add any text */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;           /* Take up the full width */
+}
+
+#moxie-logo {
+    display: inline-block;   /* Allow centering with text-align */
+    margin: 0 auto;         /* Center horizontally */
+    max-width: 80px;         /* Adjust as needed */
+    height: auto;
+}
+
+.footer p.copyright {
+    font-size: 0.8em;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+      color: black; /*Force the copy write to be black*/
+}
