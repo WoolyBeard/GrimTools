@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrimTools</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Banner Section -->
+    <header class="banner">
+        <img id="grimtools-logo" src="img/grimtools-logo.jpg" alt="GrimTools Logo">
+        <button id="vibe-check-button"></button>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <div class="content-wrapper">
+
+        <!-- ========================= Main Tab Navigation ========================= -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'GrimwildGM')">GrimWild GM Crucibles</button>
+            <button class="tablinks" onclick="openTab(event, 'GrimwildPlayer')">GrimWild Player Crucibles</button>
+            <button class="tablinks" onclick="openTab(event, 'GrimwildClass')">GrimWild Class Crucibles</button>
+            <button class="tablinks" onclick="openTab(event, 'GrimTools')">GrimTools Crucibles</button>
+            <button class="tablinks" onclick="openTab(event, 'GrimUtils')">Utilities</button>
+        </div>
+
+        <!-- ========================= Grimwild GM Crucible ========================= -->
+        <div id="GrimwildGM" class="tabcontent">
+            <!-- Sub Tab Navigation -->
+            <div class="tab">
+                <button class="tablinks" onclick="openSubTab(event, 'GMTables')">GM Crucible</button>
+            </div>
+
+            
+
+            <!-- GM Crucible Tab Content -->
+            <div id="GMTables" class="tabcontent">
+                <h2>GM Crucible</h2>
+                <button id="generate-tableMash-button">Generate Ideas</button>
+
+                <!-- Results Display -->
+                <div id="adventure-results">
+                    <div class="adventure-result">
+                        <strong>Mix:</strong> <span id="GMtableOne"></span>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>With:</strong> <span id="GMtableTwo"></span>
+                    </div>
+                </div>
+
+                   <!-- Table container goes here -->
+            <div id="First-table-container"></div>
+            <div id="Second-table-container"></div>
+
+            </div> <!-- Closing for GMTables tabcontent-->
+        </div> <!-- Closing for GrimwildGM tabcontent-->
+
+             
+        <!-- ========================= Grimwild Player Crucible ========================= -->
+        <div id="GrimwildPlayer" class="tabcontent">
+            <!-- Sub Tab Navigation -->
+            <div class="tab">
+                <button class="tablinks" onclick="openSubTab(event, 'Heritage')">Heritage Generator</button>
+                <!-- Add other sub-tab buttons here if needed -->
+            </div>
+
+            
+        <!-- Heritage Generator Tab Content -->
+        <div id="Heritage" class="tabcontent">
+            <h2>Heritage Generator</h2>
+            <button id="generate-heritage-button">Generate Heritage</button>
+
+            <!-- Results Display -->
+            <div id="heritage-results">
+                <div class="adventure-result">
+                    <strong>Area:</strong> <span id="heritageArea"></span>
+                </div>
+                <div class="adventure-result">
+                    <strong>Descriptor:</strong> <span id="heritageDescriptor"></span>
+                </div>
+                <div class="adventure-result">
+                    <strong>Denizens:</strong> <span id="heritageDenizen"></span>
+                </div>
+            </div>
+
+    
+                 <!-- Table container goes here -->
+            <div id="heritage-areas-table-container"></div>
+            <div id="heritage-descriptors-table-container"></div>
+            <div id="heritageDenizens-table-container"></div>
+
+            </div> <!-- Closing for Heritage tabcontent-->
+        </div> <!-- Closing for GrimwildPlayer tabcontent-->
+
+
+
+        <!-- ========================= Grimwild Class Crucible ========================= -->
+        <div id="GrimwildClass" class="tabcontent">
+            <!-- Sub-Tab Navigation -->
+        <div class="tab">
+            <button class="tablinks" onclick="openSubTab(event, 'Bard')">Bard</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Berserker')">Berserker</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Cleric')">Cleric</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Druid')">Druid</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Fighter')">Fighter</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Monk')">Monk</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Paladin')">Paladin</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Ranger')">Ranger</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Sorcerer')">Sorcerer</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Warlock')">Warlock</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Wizard')">Wizard</button>
+        </div>
+
+        <!-- Bard Tab Content -->
+        <div id="Bard" class="tabcontent">
+            <p>Content for Bard will go here later.</p>
+        </div>
+
+        <!-- Berserker Tab Content -->
+        <div id="Berserker" class="tabcontent">
+            <p>Content for Berserker will go here later.</p>
+        </div>
+
+        <!-- Cleric Tab Content -->
+        <div id="Cleric" class="tabcontent">
+            <p>Content for Cleric will go here later.</p>
+        </div>
+
+        <!-- Druid Tab Content -->
+        <div id="Druid" class="tabcontent">
+            <p>Content for Druid will go here later.</p>
+        </div>
+
+         <!-- Fighter Tab Content -->
+         <div id="Fighter" class="tabcontent">
+            <p>Content for Fighter will go here later.</p>
+        </div>
+
+         <!-- Monk Tab Content -->
+         <div id="Monk" class="tabcontent">
+            <p>Content for Monk will go here later.</p>
+        </div>
+
+         <!-- Paladin Tab Content -->
+         <div id="Paladin" class="tabcontent">
+            <p>Content for Paladin will go here later.</p>
+        </div>
+
+         <!-- Ranger Tab Content -->
+         <div id="Ranger" class="tabcontent">
+            <p>Content for Ranger will go here later.</p>
+        </div>
+
+         <!-- Sorcerer Tab Content -->
+         <div id="Sorcerer" class="tabcontent">
+            <p>Content for Sorcerer will go here later.</p>
+        </div>
+
+         <!-- Warlock Tab Content -->
+         <div id="Warlock" class="tabcontent">
+            <p>Content for Warlock will go here later.</p>
+        </div>
+
+         <!-- Wizard Tab Content -->
+         <div id="Wizard" class="tabcontent">
+            <p>Content for Wizard will go here later.</p>
+        </div>
+        </div>
+        
+
+
+        <!-- ========================= GrimUtils Tab ========================= -->
+       
+
+    <div id="GrimUtils" class="tabcontent">
+            <!-- Sub-Tab Navigation -->
+        <div class="tab">
+            <button class="tablinks" onclick="openSubTab(event, 'Roller')">Dice Roller</button>
+            <button class="tablinks" onclick="openSubTab(event, 'ExcalidrawBoard')">Excalidraw Board</button>
+            <button class="tablinks" onclick="openSubTab(event, 'PoolCalculator')">Pools</button>
+
+        </div>
+
+        <!-- ========================= Roller Tab Content ========================= -->
+
+        <div id="Roller" class="tabcontent">
+
+            <!-- d6 Controls -->
+            <div class="dice-controls">
+                <label>D6:</label>
+                <button id="add-d6">+</button>
+                <span id="num-d6">0</span>
+                <button id="remove-d6">-</button>
+            </div>
+
+            <!-- d8 Controls -->
+            <div class="dice-controls">
+                <label>D8:</label>
+                <button id="add-d8">+</button>
+                <span id="num-d8">0</span>
+                <button id="remove-d8">-</button>
+            </div>
+
+            <!-- Roll Button -->
+            <button id="roll-dice">Roll Dice</button>
+
+            <!-- Results Display -->
+            <div id="roll-results">
+                <strong>Results:</strong> <span id="dice-results"></span><br>
+                <strong>Total:</strong> <span id="dice-total"></span>
+            </div>
+    
+        </div> <!-- Closing for Roller tabcontent-->
+
+
+        <!-- ========================= Excalidraw Tab Content ========================= -->
+
+        <!-- Excalidraw Utility-->
+
+        <div id="ExcalidrawBoard" class="tabcontent">
+
+            <div id="excali" style="height: 500px;"></div>
+            
+        </div><!-- Closing for excalidraw tabcontent-->
+
+
+
+
+        <!-- ========================= Pools Tab Content ========================= -->
+
+        <!-- Pool Utility -->
+
+       <!-- Pool Utility -->
+
+        <div id="PoolCalculator" class="tabcontent">
+            <h2>Pool Tracker</h2>
+
+            <!-- Pool Creation Controls -->
+            <div id="pool-creation">
+                <input type="text" id="new-pool-name" placeholder="Pool Name">
+                <select id="new-pool-size">
+                    <option value="4">4d (Short)</option>
+                    <option value="6">6d (Mid)</option>
+                    <option value="8">8d (Long)</option>
+                </select>
+                <button id="create-pool">Create Pool</button>
+            </div>
+
+            <!-- Pool List Display -->
+            <div id="pool-list">
+                <!-- This is where pool tables will dynamically appear -->
+            </div>
+
+            <!-- Status Message Container -->
+            <div id="pool-status" class="pool-status"></div> <!-- Added status container -->
+
+                  
+                  
+            <!-- Pool Export/Import Controls -->
+                <div id="pool-export-import">
+                    <button id="export-pools">Export Pools</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <button id="import-pools">Import Pools</button>
+                </div>
+
+    
+    
+        </div><!-- Closing Pool Utility tabcontent-->
+           
+            
+ 
+
+    </div> <!-- Closing for GrimUtils tabcontent-->
+    
+
+        <!-- ========================= GrimTools Crucibles (All Generators) ========================= -->
+        <div id="GrimTools" class="tabcontent">
+            <!-- Sub-Tab Navigation -->
+            <div class="tab">
+                <button class="tablinks" onclick="openSubTab(event, 'Adventure')">Adventure Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'Location')">Location Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'Trap')">Trap Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'TreasureMap')">Treasure Map Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'Hirelings')">Hireling Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'PartyBonds')">Party Bonds Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'Monster')">Monster Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'PathEvents')">Path Event Generator</button>
+                <button class="tablinks" onclick="openSubTab(event, 'Loot')">Loot Generator</button>
+            </div>
+
+            <!-- ========================= Adventure Tab Content ========================= -->
+            <div id="Adventure" class="tabcontent">
+
+                <h2>Adventure Generator</h2>
+                <button id="generate-adventure-button">Generate Adventure</button>
+
+                <div id="adventure-results">
+                    <div class="adventure-result">
+                        <strong>Theme:</strong> <span id="theme"></span>
+                        <div class="adventure-description">The overarching concept or focus of the adventure.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Goal:</strong> <span id="goal"></span>
+                        <div class="adventure-description">What the players need to accomplish.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Descriptor:</strong> <span id="descriptor"></span>
+                        <div class="adventure-description">An adjective describing the adventure's environment or atmosphere.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Denizen:</strong> <span id="denizen"></span>
+                        <div class="adventure-description">A significant character or creature the players might encounter.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Danger:</strong> <span id="danger"></span>
+                        <div class="adventure-description">A threat or obstacle the players must overcome.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Location:</strong> <span id="location"></span>
+                        <div class="adventure-description">The primary setting of the adventure.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Fantastical Location:</strong> <span id="fantastical-location"></span>
+                        <div class="adventure-description">A unique or magical place within the primary location.</div>
+                    </div>
+                    <div class="adventure-result">
+                        <strong>Boon:</strong> <span id="boon"></span>
+                        <div class="adventure-description">A reward or advantage the players might gain during the adventure.</div>
+                    </div>
+                </div>
+
+                <div id="adventure-narrative">
+                    <h3>Adventure Summary</h3>
+                    <p id="adventure-story"></p>
+                </div>
+            </div>
+
+            <!-- ========================= Location Tab Content ========================= -->
+            <div id="Location" class="tabcontent">
+                <h2>Location Generator</h2>
+
+                <label for="biome-select">Select Biome:</label>
+                <select id="biome-select">
+                    <option value="forest">Forest</option>
+                    <option value="plains">Plains</option>
+                    <option value="mountains">Mountains</option>
+                    <option value="swamp">Swamp</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="desert">Desert</option>
+                </select>
+
+                <label for="location-type-select">Select Location Type:</label>
+                <select id="location-type-select">
+                    <option value="mundane">Mundane</option>
+                    <option value="fantastic">Fantastic</option>
+                </select>
+
+                <button id="generate-location-button">Generate Location</button>
+
+                <div id="location-results">
+                    <div class="location-result">
+                        <strong>Name:</strong> <span id="location-name"></span>
+                        <div class="location-description">The name of the location.</div>
+                    </div>
+                    <div class="location-result">
+                        <strong>Description:</strong> <span id="location-description"></span>
+                        <div class="location-complication">A thing about that area.</div>
+                    </div>
+                    <div class="location-result">
+                        <strong>Complication:</strong> <span id="location-complication"></span>
+                        <div class="location-complication">A thing about that area.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================= Trap Tab Content ========================= -->
+            <div id="Trap" class="tabcontent">
+                <h2>Trap Generator</h2>
+                <label for="trap-type-select">Select Trap Type:</label>
+                <select id="trap-type-select">
+                    <option value="mundane">Mundane</option>
+                    <option value="fantastic">Fantastic</option>
+                </select>
+                <button id="generate-trap-button">Generate Trap</button>
+
+                <div id="trap-details">
+                    <p><strong>Mechanism:</strong> <span id="mechanism"></span></p>
+                    <p><strong>Consequence:</strong> <span id="consequence"></span></p>
+                    <p><strong>Tell:</strong> <span id="tell"></span></p>
+                    <p><strong>Difficulty:</strong> <span id="difficulty"></span></p>
+                    <p><strong>Sense:</strong> <span id="sense"></span></p> <!-- New Display -->
+                </div>
+            </div>
+
+            <!-- ========================= Treasure Map Tab Content ========================= -->
+            <div id="TreasureMap" class="tabcontent">
+                <h2>Treasure Map Generator</h2>
+                <button id="generate-treasure-map-button">Generate Treasure Map</button>
+
+                <div id="treasure-map-results">
+                    <div class="treasure-map-result">
+                        <strong>Starting Location:</strong> <span id="starting-location"></span>
+                        <div class="treasure-map-description">The initial place on the map.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Treasure Location:</strong> <span id="treasure-location"></span>
+                        <div class="treasure-map-description">The place where the treasure is hidden.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Is Fantastic Starting Location:</strong> <span id="is-fantastic-starting-location"></span>
+                        <div class="treasure-map-description">Is the Starting Location mundane or fantastic.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Is Fantastic Treasure Location:</strong> <span id="is-fantastic-treasure-location"></span>
+                        <div class="treasure-map-description">Is the Treasure Location mundane or fantastic.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Location Detail:</strong> <span id="location-detail"></span>
+                        <div class="treasure-map-description">Details to describe the journey to the treasure.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Location Descriptor:</strong> <span id="location-descriptor"></span>
+                        <div class="treasure-map-description">A descriptor to set the scene.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Directions:</strong> <span id="directions"></span>
+                        <div class="treasure-map-description">How to get to the treasure.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Guardian:</strong> <span id="guardian"></span>
+                        <div class="treasure-map-description">What guards the treasure.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Plundered:</strong> <span id="plundered"></span>
+                        <div class="treasure-map-description">Has the treasure already been found?</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Who Was Here:</strong> <span id="who-was-here"></span>
+                        <div class="treasure-map-description">If plundered, who took it?</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>What They Took:</strong> <span id="they-took"></span>
+                        <div class="treasure-map-description">What did they leave behind?</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Where Did They Go:</strong> <span id="where-did-they-go"></span>
+                        <div class="treasure-map-description">Where they were last seen.</div>
+                    </div>
+                    <div class="treasure-map-result">
+                        <strong>Reward:</strong> <span id="reward"></span>
+                        <div class="treasure-map-description">What is the reward.</div>
+                    </div>
+                </div>
+
+                <div id="treasure-narrative">
+                    <h3>Treasure Narrative</h3>
+                    <p id="treasure-story"></p>
+                </div>
+            </div>
+
+            <!-- ========================= Hirelings Tab Content ========================= -->
+            <div id="Hirelings" class="tabcontent">
+                <h2>Hireling Generator</h2>
+                <button id="generate-hireling-button">Generate Hireling</button>
+
+                <div id="hireling-results">
+                    <div class="hireling-result">
+                        <strong>Settlement Hireling Availability:</strong> <span id="settlement-hireling-availability"></span>
+                        <div class="hireling-description"> Hireling Availability on the base of a settlements size</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Amount of Recruits:</strong> <span id="recruit-amount"></span>
+                        <div class="hireling-description"> How many potential recruits within the settlement.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Health Pool:</strong> <span id="health-pool"></span>
+                        <div class="hireling-description">Health dice for a basic hireling.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Race:</strong> <span id="race"></span>
+                        <div class="hireling-description">What the hireling is.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Profession:</strong> <span id="profession"></span>
+                        <div class="hireling-description">What the hireling does.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Equipment and Preparedness:</strong> <span id="equipment-preparedness"></span>
+                        <div class="hireling-description">Is the hireling prepared.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Personal Goal:</strong> <span id="personal-goal"></span>
+                        <div class="hireling-description">The known goal.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Secret Goal:</strong> <span id="secret-goal"></span>
+                        <div class="hireling-description">The unknown goal.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Personality:</strong> <span id="personality"></span>
+                        <div class="hireling-description">What the hireling is like.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Loyalty/Morale:</strong> <span id="loyalty-morale"></span>
+                        <div class="hireling-description">How loyal they are to the group.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Physical Features:</strong> <span id="physical-features"></span>
+                        <div class="hireling-description">What they generally look like.</div>
+                    </div>
+                    <div class="hireling-result">
+                        <strong>Odd Features:</strong> <span id="odd-features"></span>
+                        <div class="hireling-description">What makes them stand out.</div>
+                    </div>
+                </div>
+    
+                <div id="hireling-summary">
+                    <h3>Hireling Summary</h3>
+                    <p id="hireling-story"></p>
+                </div>
+            </div>
+
+         <!-- ========================= Party Bonds Tab Content ========================= -->
+
+           <div id="PartyBonds" class="tabcontent">
+            <h2>Party Bonds Generator</h2>
+            <button id="generate-party-bonds-button">Generate Party Bonds</button>
+
+            <div id="party-bonds-results">
+                <div class="party-bonds-result">
+                    <strong>Characters Are:</strong> <span id="charactersAre"></span>
+                </div>
+                <div class="party-bonds-result">
+                    <strong>Bound Together By:</strong> <span id="boundTogetherBy"></span>
+                </div>
+                <div class="party-bonds-result">
+                    <strong>Who Are:</strong> <span id="whoAre"></span>
+                </div>
+                <div class="party-bonds-result">
+                    <strong>And Battle:</strong> <span id="andBattle"></span>
+                </div>
+                <div class="party-bonds-result">
+                    <strong>Who Are Trying To:</strong> <span id="whoAreTryingTo"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monster Tab Content -->
+        <div id="Monster" class="tabcontent">
+            <h2>Monster/Wildlife Generator</h2>
+            <button id="generate-monster-button">Generate Monster</button>
+
+            <div id="monster-results">
+                <div class="monster-result">
+                    <strong>Type:</strong> <span id="monster-type"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Size:</strong> <span id="monster-size"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Number Appearing:</strong> <span id="monster-number"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Demeanor:</strong> <span id="monster-demeanor"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Number of Limbs:</strong> <span id="monster-limbs"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Appendages:</strong> <span id="monster-appendages"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Attack/Defense:</strong> <span id="monster-attack"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Markings/Color:</strong> <span id="monster-markings"></span>
+                </div>
+                <div class="monster-result">
+                    <strong>Odd Features:</strong> <span id="monster-oddities"></span>
+                </div>
+            </div>
+            <div id="monster-description">
+                <h3>Interpretation</h3>
+                <p id="monster-interpretation"></p>
+            </div>
+        </div>
+
+         <!-- Path Events Tab Content -->
+         <div id="PathEvents" class="tabcontent">
+            <h2>Path Event Generator</h2>
+
+            <label for="path-biome-select">Select Biome:</label>
+            <select id="path-biome-select">
+                <option value="forest">Forest</option>
+                <option value="plains">Plains</option>
+                <option value="mountains">Mountains</option>
+                <option value="swamp">Swamp</option>
+                <option value="arctic">Arctic</option>
+                <option value="desert">Desert</option>
+            </select>
+
+            <label for="path-type-select">Select Path Type:</label>
+            <select id="path-type-select">
+                <option value="major">Major Path</option>
+                <option value="minor">Minor Path</option>
+                <option value="rough">Rough Path</option>
+            </select>
+
+            <button id="generate-path-event-button">Generate Path Event</button>
+
+            <div id="path-event-results">
+                <div class="path-event-result">
+                    <strong>Event:</strong> <span id="path-event"></span>
+                </div>
+                <div class="path-event-result">
+                    <strong>Details:</strong> <span id="path-event-details"></span>
+                </div>
+            </div>
+        </div>
+
+     
+      <!-- Loot Tab Content -->
+      <div id="Loot" class="tabcontent">
+        <h2>Loot Generator</h2>
+
+        <label for="loot-value-select">Select Value:</label>
+        <select id="loot-value-select">
+            <option value="minor">Minor</option>
+            <option value="major">Major</option>
+            <option value="mythic">Mythic</option>
+        </select>
+
+        <label for="loot-type-select">Select Type:</label>
+        <select id="loot-type-select">
+            <option value="tangibles">Tangibles</option>
+            <option value="intangibles">Intangibles</option>
+            <option value="magic">Magic</option>
+        </select>
+
+        <button id="generate-loot-button">Generate Loot</button>
+
+        <div id="loot-results">
+            <div class="loot-result">
+                <strong>Loot:</strong> <span id="loot-item"></span>
+            </div>
+            <div class="loot-result">
+                <strong>Details:</strong> <span id="loot-details"></span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</div><!-- Closing for GrimTools tabcontent-->
+   
+    <footer class="footer">
+        <img id="moxie-logo" src="img/madewithmoxie.png" alt="Made with Moxie Logo">
+        <p class="copyright">
+            GrimTools is based on Moxie © 2024 by J.D. Maxwell and Oddity Press, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.
+        </p>
+    </footer>
+          
+<!-- Load data files - ensure arrays are created before script.js -->
+<script src="js/adventure-data.js"></script>
+<script src="js/gm-table-data.js"></script>
+<script src="js/hireling-data.js"></script>
+<script src="js/location-data.js"></script>
+<script src="js/loot-data.js"></script>
+<script src="js/monster-data.js"></script>
+<script src="js/party-bonds-data.js"></script>
+<script src="js/path-events-data.js"></script>
+<script src="js/trap-data.js"></script>
+<script src="js/treasure-map-data.js"></script>
+<script src="js/vibe-check-data.js"></script>
+<script src="js/player-heritage-data.js"></script>
+
+ <!-- React and ReactDOM -->
+ <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+ <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+ <!-- Excalidraw -->
+ <link rel="stylesheet" href="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.min.css">
+ <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
+
+<!-- The Main Generator Script -->
+<script src="js/script.js"></script>
+       
+
+
+    
+ 
+   
+</body>
+</html>

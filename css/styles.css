@@ -1,0 +1,615 @@
+/* ========================= General Styles ========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.content-wrapper {
+    flex: 1;
+    margin: 20px;
+}
+
+/* ========================= Banner Styling ========================= */
+
+.banner {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#grimtools-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    height: auto;
+}
+
+#vibe-check-button {
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+}
+
+/* ========================= Footer Styling ========================= */
+
+.footer {
+    color: #fff; /* Set a default, can be overridden below */
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+#moxie-logo {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 80px;
+    height: auto;
+}
+
+.footer p.copyright {
+    font-size: 0.8em;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+    color: black; /* Force the copyright text to be black */
+}
+
+/* ========================= Tab Styling ========================= */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: #333;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* ========================= Button Styling ========================= */
+
+button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+/* ========================= Adventure Styling ========================= */
+
+.adventure-result {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.adventure-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+#adventure-narrative {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* ========================= Location Styling ========================= */
+
+#location-results {
+    margin-top: 10px;
+}
+
+.location-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#biome-select,
+#location-type-select {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ========================= Trap Styling ========================= */
+
+#trap-details {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+/* ========================= Treasure Map Styling ========================= */
+
+#treasure-map-results {
+    margin-top: 10px;
+}
+
+.treasure-map-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.treasure-map-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 3px;
+}
+
+#treasure-narrative {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* ========================= Hireling Styling ========================= */
+
+#hireling-results {
+    margin-top: 10px;
+}
+
+.hireling-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.hireling-description {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 3px;
+}
+
+#hireling-summary {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* ========================= Party Bonds Styling ========================= */
+
+#party-bonds-results {
+    margin-top: 10px;
+}
+
+.party-bonds-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* ========================= Monster Styling ========================= */
+
+#monster-results {
+    margin-top: 10px;
+}
+
+.monster-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#monster-description {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* ========================= Path Events Styling ========================= */
+
+#path-event-results {
+    margin-top: 10px;
+}
+
+.path-event-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* ========================= Loot Generator Styling ========================= */
+
+#loot-results {
+    margin-top: 10px;
+}
+
+.loot-result {
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* ========================= GMTable Styling ========================= */
+
+.table-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.data-table {
+    border-collapse: collapse;
+    width: 48%;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* ========================= Vibe Check Result Styling ========================= */
+
+#divCenterText {
+    text-align: center;
+    position: relative;
+}
+
+#vibe-check-result {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: white;
+    z-index: 100;
+    pointer-events: none;
+}
+
+#vibe-text {
+    display: inline;
+}
+
+
+
+/*=======Heritage Styling=========*/
+
+#Heritage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit columns, min width 300px */
+    gap: 10px; /* Space between grid items */
+  }
+  
+  #Heritage>div {
+      width: 100%;
+  }
+  
+  .data-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+
+
+
+/* ========================= Roller Styling ========================= */
+
+
+/* Container to organize dice controls */
+.dice-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Label to the left of each controller */
+.dice-controls label {
+    margin-right: 5px;
+}
+
+/* Adjust spacing and font size for dice control buttons */
+.dice-controls button {
+    padding: 10px 15px; /* Increased padding for better spacing */
+    font-size: 1.2em; /* Increased font size for better readability */
+    margin: 0 5px; /* Add horizontal margin between buttons */
+    background-color: #3498db; /* A different, yet complimentary color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s; /* Adds smooth transition on hover */
+}
+
+.dice-controls button:hover {
+    background-color: #2980b9;
+}
+
+/* Style for the span */
+.dice-controls span {
+    display: inline-block; /* Make it a block-level element */
+    font-size: 1.2em; /* Same as buttons for consistency */
+    min-width: 30px; /* Ensure a minimum width for alignment */
+    text-align: center; /* Align text in the center */
+    margin: 0 5px; /* Horizontal spacing */
+}
+
+/* Display area for dice roll results */
+#roll-results {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#roll-results strong {
+    font-weight: bold;
+}
+
+#roll-results span {
+    color: #555;
+}
+
+/* ========================= Pool Config Styling ========================= */
+
+
+/* ... (existing styles) ... */
+
+.pool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.pool-table thead tr {
+  
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.pool-table th,
+.pool-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+.pool-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.pool-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.pool-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.removed-die {
+    color: red;
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+#create-pool,
+.pool-table button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#create-pool:hover,
+.pool-table button:hover {
+    background-color: #3e8e41;
+}
+
+#pool-creation {
+    margin-bottom: 15px;
+}
+
+#pool-creation input[type="text"],
+#pool-creation select {
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.pool-status {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.pool-status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.pool-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.pool-status.depleted {
+    background-color: #ffcdd2;
+    color: #d32f2f;
+    border: 1px solid #ef9a9a;
+}
+
+/* Pool table name */
+.pool-name {
+    text-align: center; /* Center the text */
+    font-weight: bold;   /* Make it stand out */
+    padding: 10px;       /* Add some padding for spacing */
+    font-size: 1.2em;     /* Adjust the size */
+    color: #000000;
+}
+
+/* Styles for the buttons */
+.button-container {
+    display: flex;          /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space out the buttons evenly */
+    margin-bottom: 5px;
+}
+
+.button-container button {
+    padding: 5px 10px;       /* Adjust padding as needed */
+    margin: 0 5px;           /* Add spacing between buttons */
+}
+
+/* Styles for the cells, especially when they are in one row with the name */
+.pool-table th {
+    text-align: center; /* Center the text */
+    vertical-align: middle;  /* Center vertically too */
+}
+
+.pool-table thead tr th:first-child {
+    width: 50%;             /* Width for the buttons */
+    padding: 10px;
+}
+
+.pool-table thead tr th:last-child {
+    width: 50%;             /* Width for the name */
+    padding: 10px;
+}
+
+.pool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    table-layout: fixed;   /* Add this line */
+}
+
+/* Export/Import Controls */
+#pool-export-import {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#export-pools,
+#import-pools {
+    background-color: #4287f5;  /* Blue color */
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#export-pools:hover,
+#import-pools:hover {
+    background-color: #1d4ed8; /* Darker blue */
+}
+
+
+/* ========================= Interpretation Styling ========================= */
+#GMtableInterpretation {
+    font-style: italic;
+    color: green;
+}
+
+
+
+
+/*=======TABLE Styling ============*/
+
+.table-container {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    margin-top: 20px; /* Add space above the tables */
+    flex-wrap: wrap; /* Allow tables to wrap on smaller screens */
+}
+
+/* Adjust table width for side-by-side display */
+.data-table {
+    border-collapse: collapse;
+    width: 30%; /* Adjust as needed, for three side-by-side */
+    margin-bottom: 10px; /* Spacing for mobile view */
+}
+
+/* Make tables take up the full width on small screens */
+@media (max-width: 768px) {
+    .data-table {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
