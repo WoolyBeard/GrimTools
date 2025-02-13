@@ -585,7 +585,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-//=====new roller
+// ========================= Class Code Starts Here =========================
+
+
+// ========================= Bard Crucibles =========================
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Roller Button Event Listener
+    document.getElementById("generate-bard-performance").addEventListener("click", function () {
+      const style = getRandomItem(bardStyles);
+      const tune = getRandomItem(bardTunes);
+      const impact = getRandomItem(bardImpacts);
+      const instrument = getRandomItem(bardInstruments); // NEW
+  
+      // Generate the Narrative
+      const narrative = generateBardNarrative(style, tune, impact);
+  
+      // Update the results display
+      document.getElementById("bard-style").textContent = style;
+      document.getElementById("bard-tune").textContent = tune;
+      document.getElementById("bard-impact").textContent = impact;
+      document.getElementById("bard-narrative").textContent = narrative; // Added Narrative
+      document.getElementById("bard-instrument").textContent = instrument; // NEW
+    });
+  
+  
+      /**
+       * Returns a random item from an array.
+       * @param {Array} array - The array to select from.
+       * @returns {*} - A randomly selected item from the array.
+       */
+      function getRandomItem(array) {
+          return array[Math.floor(Math.random() * array.length)];
+      }
+  
+    // Narrative Generation Function
+    function generateBardNarrative(style, tune, impact) {
+      let narrative = "";
+  
+      switch (`${style} ${tune} of ${impact}`) {
+        case "haunting requiem of fear":
+          narrative = "The villagers abandon their homes, terrified of shadows that aren't there.";
+          break;
+        case "playful ballad of joy":
+          narrative = "A tense negotiation dissolves into laughter, everyone suddenly sharing joyful stories.";
+          break;
+        case "whimsical serenade of wonder":
+          narrative = "The towering golem halts, transfixed by the sudden beauty of a flower.";
+          break;
+        case "dire chant of despair":
+          narrative = "The dragon, mid-flight, veers away in terror, retreating to its lair in panic.";
+          break;
+        case "fiery anthem of fury":
+          narrative = "A normally docile treant uproots itself, thrashing wildly, lashing out at all nearby.";
+          break;
+        case "nostalgic ode of hope":
+          narrative = "War-weary soldiers rally, tears flowing, as they march against impossible odds.";
+          break;
+        case "chaotic hymn of mockery":
+          narrative = "The proud king stumbles, embarrassed, as the crowd laughs uncontrollably.";
+          break;
+        case "rousing rhapsody of affection":
+          narrative = "The rampaging dire wolf stops and nuzzles someone nearby, tail wagging.";
+          break;
+        case "gentle anthem of calm":
+          narrative = "The hydra lowers its heads, each one slowly settling into peaceful slumber.";
+          break;
+        case "vicious ditty of fury":
+          narrative = "A tavern erupts in wanton destruction, patrons consumed by primal rage.";
+          break;
+        default:
+          narrative = `A ${style} ${tune} of ${impact}. (Generic Result)`;
+          break;
+      }
+  
+      return narrative;
+    }
+  });
+  
+  // Table Generation
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Set column headers (can be customized)
+    const columnHeaders = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    const columnHeadersIns = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20","21", "22", "23", "24"];  
+    // Generate table for Styles
+    generateTable("bard-styles-table-container", "Styles", [bardStyles], columnHeaders);
+  
+    // Generate table for Tunes
+    generateTable("bard-tunes-table-container", "Tunes", [bardTunes], columnHeaders);
+  
+    // Generate table for Impacts
+    generateTable("bard-impacts-table-container", "Impacts", [bardImpacts], columnHeaders);
+
+    // Generate table for Instruments
+    generateTable("bard-instruments-table-container", "Instruments", [bardInstruments], columnHeadersIns);
+
+  });
+
+  
+
+//=====new roller   =========================
 
 document.addEventListener("DOMContentLoaded", function () {
     let numD6 = 0;
@@ -630,7 +731,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let perfectD6 = 0;
         let messyD6 = 0;
         let grimD6 = 0;
+        let disasterD6 = 0;
         let numThorns = 0;
+        let crit = false; // Check if two 6's are rolled
 
         // Roll d6s
         for (let i = 0; i < numD6; i++) {
@@ -647,6 +750,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+        //Crit Check
+        if (perfectD6 >= 2) {
+            crit = true;
+        }
+
         // Roll d8s (Thorns)
         for (let i = 0; i < numD8; i++) {
             const roll = Math.floor(Math.random() * 8) + 1;
@@ -660,16 +768,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Determine the initial outcome based on D6s
         let outcome = "Grim"; // Default
-        if (perfectD6 > 0) {
+        if (crit) {
+            outcome = "Crit"; // Set to "Crit" if two 6's are rolled
+        } else if (perfectD6 > 0) {
             outcome = "Perfect";
         } else if (messyD6 > 0) {
             outcome = "Messy";
         }
 
+
         // Function to apply color codes and the string
         function applyColorCode(outcome) {
             let color = "";
+            let bold = false; // is bolded
             switch (outcome) {
+                case "Crit":
+                    color = "gold";
+                    break;
                 case "Perfect":
                     color = "green";
                     break;
@@ -679,16 +794,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 case "Grim":
                     color = "red";
                     break;
+                case "Disaster":
+                    color = "darkred"; //Disaster text change
+                    bold = true; // disaster text bold
+                    break;
                 default:
                     color = "black"; //Or your preferred "normal" color
                     break;
             }
-            return `<span style="color: ${color}">${outcome}</span>`;
+            if (bold) {
+                return `<span style="color: ${color}; font-weight: bold">${outcome}</span>`; // make disaster bold
+            } else {
+                return `<span style="color: ${color}">${outcome}</span>`;
+            }
         }
 
         //Thorn Calculation
         let thornEffect = ""; //String to store what happened.
         let initialOutcome = outcome; // to show the base number
+
         for (let i = 0; i < numThorns; i++) {
             if (outcome === "Messy") {
                 outcome = "Grim";
@@ -696,6 +820,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (outcome === "Perfect") {
                 outcome = "Messy"; //Or Grim you can choose.
                 thornEffect += " (Perfect -> Messy)";
+            } else if (outcome === "Grim") {
+                outcome = "Disaster";
+                thornEffect += " (Grim -> Disaster)";
             }
         }
 
@@ -762,7 +889,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ========================= Pool utility =========================
 
-// ========================= Pool utility =========================
 
 /**
  * Manages diminishing pools of d6 dice for tracking resources, time, or effort.
@@ -1061,9 +1187,232 @@ importFileElement.addEventListener("change", handleFileImport);
 
 
 
+//========================== Character Keeper =======================
+
+
+// js/script.js
+console.log("Character Keeper script running...");
+
+const classSelect = document.getElementById("class-select");
+const addCharacterInstanceButton = document.getElementById("add-character-instance");
+const characterInstancesContainer = document.getElementById("character-instances");
+const sheetUrlPrompt = document.getElementById("sheet-url-prompt");
+const sheetUrlInput = document.getElementById("sheet-url");
+const saveCharacterDataButton = document.getElementById("save-character-data");
+const importCharacterDataButton = document.getElementById("import-character-data");
+const importFileCharacterElement = document.getElementById("import-file-character");
+const characterNameInput = document.getElementById("character-name");
+
+let characterData = {
+    instances: {} // Object to store character instances and their data
+};
+
+let currentId = 0;
+
+// Function to generate the tab panel for a character
+function generateSheetContainer(sheetData) {
+    const tabPanel = document.createElement('div');
+    tabPanel.id = sheetData.id;
+    tabPanel.classList.add('character-tab-panel');
+
+    // Create a container for the embed
+    const sheetEmbedContainer = document.createElement('div');
+    sheetEmbedContainer.classList.add('sheet-embed-container');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = sheetData.sheetUrl;
+    iframe.width = "600";
+    iframe.height = "400";
+    iframe.frameBorder = "0";
+    sheetEmbedContainer.appendChild(iframe);
+
+    tabPanel.appendChild(sheetEmbedContainer);
+
+    // Button to Remove
+    const removeCharacterButton = document.createElement("button");
+    removeCharacterButton.innerHTML = `Remove ${sheetData.name}`;
+    removeCharacterButton.addEventListener('click', (event) => {
+        const parentDiv = document.getElementById(sheetData.id); // Get the tabPanel by ID
+        delete characterData.instances[sheetData.id]; // Remove the object
+        parentDiv.remove(); //Remove the Element
+    });
+
+    tabPanel.appendChild(removeCharacterButton);
+
+    return tabPanel;
+}
+
+// Function to open a character tab
+function openCharacterTab(tabId) {
+    // Hide all tab panels
+    const tabPanels = document.querySelectorAll('.character-tab-panel');
+    tabPanels.forEach(panel => {
+        panel.style.display = 'none';
+    });
+
+    // Deactivate all tab buttons
+    const tabButtons = document.querySelectorAll('.character-tab-button');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Show the selected tab panel
+    const selectedPanel = document.getElementById(tabId);
+    if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+    }
+
+    // Activate the selected tab button
+    const selectedButton = document.querySelector(`.character-tab-button[data-tab="${tabId}"]`);
+    if (selectedButton) {
+        selectedButton.classList.add('active');
+    }
+}
+
+// Function to create the tab button
+function createTabButton(tabId, characterName, className) {
+    const tabButton = document.createElement('button');
+    tabButton.classList.add('character-tab-button');
+    tabButton.dataset.tab = tabId; // Store the tab ID
+    tabButton.textContent = `${characterName} (${className})`; // Display name and class
+    tabButton.addEventListener('click', () => openCharacterTab(tabId));
+    return tabButton;
+}
+
+// Function to add a new character instance (creates tab button and panel)
+function addClassInstance(className, name, sheetURL) {
+    currentId++;
+    const tabId = `character-tab-${currentId}`; // unique ID for each instance
+
+    if (!characterData.instances) {
+        characterData.instances = {};
+    }
+
+    const sheetData = {
+        name: name,
+        sheetUrl: sheetURL,
+        id: tabId,
+    };
+
+    // Create the tab panel
+    const tabPanel = generateSheetContainer(sheetData);
+
+    // Create the tab button (passing the class name)
+    const tabButton = createTabButton(tabId, name, className);
+
+    // Append to proper containers.
+    document.getElementById("character-tab-buttons-container").appendChild(tabButton);
+    document.getElementById("character-tab-panels-container").appendChild(tabPanel);
 
 
 
+    // Store the character data
+    characterData.instances[tabId] = {
+        name: name,
+        className: className,
+        sheetURL: sheetURL,
+        id: tabId, //Store the ID with the data as well
+    };
+
+    console.log("characterData after adding:", characterData);
+
+    // Open the newly created tab
+    openCharacterTab(tabId);
+
+    return `Object name ${name} with link ${sheetURL}`;
+}
+
+// Event listener for adding a character instance
+addCharacterInstanceButton.addEventListener("click", function () {
+    const selectedClass = classSelect.value;
+    const selectedName = characterNameInput.value;
+    const sheetURL = sheetUrlInput.value;
+
+    if (selectedClass) {
+        if (selectedName && sheetURL) {
+            addClassInstance(selectedClass, selectedName, sheetURL);
+        }
+    } else {
+        alert("Please select a class, cannot create empty load without a type.");
+    }
+});
+
+// ========================= Load, Save, Import Code =========================
+
+function saveData() {
+    const dataStr = JSON.stringify(characterData);
+    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+    const exportFileName = 'character_data.json';
+
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileName);
+    document.body.appendChild(linkElement);
+    linkElement.click();
+    document.body.removeChild(linkElement);
+}
+
+function importData() {
+    importFileCharacterElement.click();
+}
+
+/**
+ *This code loads the old characters back onto the scene.
+ *
+ */
+function changeData(event) {
+    const file = event.target.files[0];
+
+    if (!file) {
+        alert("No file selected.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        try {
+            characterData = JSON.parse(e.target.result);
+            // Iterate over all sheets
+            for (const tabId in characterData.instances) {
+                if (characterData.instances.hasOwnProperty(tabId)) {
+                    const character = characterData.instances[tabId];
+                    addClassInstance(character.className, character.name, character.sheetURL);
+                    // Re-open the tab
+                    openCharacterTab(tabId);
+                }
+            }
+        } catch (error) {
+            alert("Error parsing file: " + error);
+        }
+    };
+    reader.readAsText(file);
+}
+
+// ========================= Load Save Import Event Listener =========================
+saveCharacterDataButton.addEventListener("click", saveData);
+importCharacterDataButton.addEventListener("click", importData);
+importFileCharacterElement.addEventListener("change", changeData);
+
+// ========================= Initialize =========================
+//We need the character to load to the site.
+document.addEventListener("DOMContentLoaded", function () {
+    // Load at start
+    importData();
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const tabPanelsContainer = document.getElementById("character-tab-panels-container");
+
+    if (tabPanelsContainer) {
+        tabPanelsContainer.addEventListener("wheel", function(event) {
+            event.stopPropagation(); // Prevent scroll from propagating up
+        });
+    } else {
+        console.warn("#character-tab-panels-container not found!");
+    }
+});
+    
 // ========================= Tab Management =========================
 // Tab Management
 function openTab(evt, tabName) {

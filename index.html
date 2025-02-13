@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>GrimTools</title>
+        
+
+
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -112,7 +116,40 @@
 
         <!-- Bard Tab Content -->
         <div id="Bard" class="tabcontent">
-            <p>Content for Bard will go here later.</p>
+        
+            <h2>Bard Song Crucibles</h2>
+            <button id="generate-bard-performance">Generate Performance</button>
+
+            <!-- Results Display -->
+            <div id="bard-results">
+                <div class="bard-result">
+                    <strong>Style:</strong> <span id="bard-style"></span>
+                    <div class="bard-description">How you feel when you're singing the song.</div>
+                </div>
+                <div class="bard-result">
+                    <strong>Tune:</strong> <span id="bard-tune"></span>
+                    <div class="bard-description">A familiar form that anyone can recognize.</div>
+                </div>
+                <div class="bard-result">
+                    <strong>Impact:</strong> <span id="bard-impact"></span>
+                    <div class="bard-description">How you want the song to make them feel.</div>
+                </div>
+                <div class="bard-result">
+                    <strong>Narrative:</strong> <span id="bard-narrative"></span>
+                    <div class="bard-description"></div>
+                </div>
+                <div class="bard-result">
+                    <strong>Bardic Instrument:</strong> <span id="bard-instrument"></span>
+                <div class="bard-description">Your instrument or instruments are an important part of what makes you a bard.</div>
+            </div>
+
+            <h2>Roll Tables</h2>
+
+            <div id="bard-styles-table-container"></div>
+            <div id="bard-tunes-table-container"></div>
+            <div id="bard-impacts-table-container"></div>
+            <div id="bard-instruments-table-container"></div>
+            </div>
         </div>
 
         <!-- Berserker Tab Content -->
@@ -177,7 +214,10 @@
             <button class="tablinks" onclick="openSubTab(event, 'Roller')">Dice Roller</button>
             <button class="tablinks" onclick="openSubTab(event, 'ExcalidrawBoard')">Excalidraw Board</button>
             <button class="tablinks" onclick="openSubTab(event, 'PoolCalculator')">Pools</button>
+            <button class="tablinks" onclick="openSubTab(event, 'CharacterKeeper')">Character Keeper</button>
 
+
+        
         </div>
 
         <!-- ========================= Roller Tab Content ========================= -->
@@ -212,6 +252,7 @@
         </div> <!-- Closing for Roller tabcontent-->
 
 
+
         <!-- ========================= Excalidraw Tab Content ========================= -->
 
         <!-- Excalidraw Utility-->
@@ -222,14 +263,11 @@
             
         </div><!-- Closing for excalidraw tabcontent-->
 
-
+        
 
 
         <!-- ========================= Pools Tab Content ========================= -->
 
-        <!-- Pool Utility -->
-
-       <!-- Pool Utility -->
 
         <div id="PoolCalculator" class="tabcontent">
             <h2>Pool Tracker</h2>
@@ -265,6 +303,71 @@
     
     
         </div><!-- Closing Pool Utility tabcontent-->
+
+
+        <!-- ========================= Character Keeper Content ========================= -->
+
+ 
+            
+
+      <!-- IF I EVER GET SERIOUS AND ACTUALLY USE A WEB SERVER
+        <script src="https://unpkg.com/pdfjs-dist@4.10.38/build/pdf.mjs" type="module"></script>
+        <script>
+            // Set global variables
+            window.pdfjsWorkerSrc = 'https://unpkg.com/pdfjs-dist@4.10.38/build/pdf.worker.mjs';
+            window.classPdfMap = {
+                bard: 'https://github.com/WoolyBeard/GrimTools/blob/632cdd80bc0efd0541f58d865a75947813c02bc8/js/pdf/Bard.pdfjs/pdf/Bard.pdf',
+                berserker: 'pdf/berserker_character_sheet.pdf'
+            };
+
+            window.addEventListener('load', function() {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = window.pdfjsWorkerSrc;
+                console.log("PDF.js loaded (after window load):", pdfjsLib);
+                initializeCharacterKeeper();
+            });
+        </script> -->
+      
+
+                
+        <div id="CharacterKeeper" class="tabcontent">
+            <h2>Character Keeper</h2>
+
+        <label for="class-select">Select Class:</label>
+
+            <select id="class-select">
+                <option value="">Choose a Class</option>
+                <option value="bard">Bard</option>
+                <option value="berserker">Berserker</option>
+            
+            </select> 
+
+            <label for="character-name">Character Name:</label>
+            <input type="text" id="character-name" placeholder="Enter Character Name">
+
+            <label for="sheet-url">Google Sheet URL:</label>
+            <input type="text" id="sheet-url" placeholder="Enter Google Sheet URL">
+
+            <button id="add-character-instance">Add Character Instance</button>
+
+                  
+            <!-- Character Instances Container -->
+            <div id="character-instances">
+                <div id="character-tab-buttons-container">
+                    <!-- Tab buttons will be dynamically added here -->
+                </div>
+                <div id="character-tab-panels-container">
+                    <!-- Tab panels will be dynamically added here -->
+                </div>
+            </div>
+
+    
+
+            <button id="save-character-data">Save Character Data</button>
+            <button id="import-character-data">Import Character Data</button>
+            <input type="file" id="import-file-character" accept=".json" style="display: none;">
+        </div>
+    
+
            
             
  
@@ -679,6 +782,15 @@
 <script src="js/vibe-check-data.js"></script>
 <script src="js/player-heritage-data.js"></script>
 
+
+<!-- Load Mozilla PDF library before the classes  NEEDS A WEBSERVER 
+<script src="https://unpkg.com/pdfjs-dist@4.10.38/build/pdf.mjs" type="module"></script> --> 
+
+
+<!-- Load class data files - ensure arrays are created before script.js -->
+<script src="js/Classes/bardCrucibles.js"></script>
+
+
  <!-- React and ReactDOM -->
  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -686,6 +798,8 @@
  <!-- Excalidraw -->
  <link rel="stylesheet" href="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.min.css">
  <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
+
+
 
 <!-- The Main Generator Script -->
 <script src="js/script.js"></script>
