@@ -557,6 +557,156 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+//======================    Seasons Tab    ==================================================
+
+
+document.getElementById("GenerateSeasons").addEventListener("click", function() {
+    // Roll on tables and combine
+    const spring = rollOnTable(SeasonSpringPrefix) + " " + rollOnTable(SeasonSpringSuffix);
+    const summer = rollOnTable(SeasonSummerPrefix) + " " + rollOnTable(SeasonSummerSuffix);
+    const fall = rollOnTable(SeasonFallSuffix) + " " + rollOnTable(SeasonFallSuffix);
+    const winter = rollOnTable(SeasonWinterPrefix) + " " + rollOnTable(SeasonWinterPrefix);
+    
+
+
+    // Update HTML
+    document.getElementById("spring").textContent = spring;
+    document.getElementById("summer").textContent = summer;
+    document.getElementById("fall").textContent = fall;
+    document.getElementById("winter").textContent = winter;
+    
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Set column headers (can be customized)
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+
+    
+// Generate table for SpringPrefix
+generateTable("springprefix-table-container", "Spring Prefix", [SeasonSpringPrefix], columnHeaders);
+
+// Generate table for SpringSuffix
+generateTable("springsuffix-table-container", "Spring Suffix", [SeasonSpringSuffix], columnHeaders);
+
+// Generate table for SummerPrefix
+generateTable("summerprefix-table-container", "Summer Prefix", [SeasonSummerPrefix], columnHeaders);
+
+// Generate table for SummerSuffix
+generateTable("summersuffix-table-container", "Summer Suffix", [SeasonSummerSuffix], columnHeaders);
+
+// Generate table for FallPrefix
+generateTable("fallprefix-table-container", "Fall Prefix", [SeasonFallPrefix], columnHeaders);
+
+// Generate table for FallSuffix
+generateTable("fallsuffix-table-container", "Fall Suffix", [SeasonFallSuffix], columnHeaders);
+
+// Generate table for WinterPrefix
+generateTable("winterprefix-table-container", "Winter Prefix", [SeasonWinterPrefix], columnHeaders);
+
+// Generate table for WinterSuffix
+generateTable("wintersuffix-table-container", "Winter Suffix", [SeasonWinterSuffix], columnHeaders);
+
+});
+
+
+
+
+//======================    Exploration Tab    ==================================================
+
+
+   
+
+    document.getElementById("GenerateExploration").addEventListener("click", function() {
+        // Roll on tables and combine
+        const building = rollOnTable(Building1) + " " + rollOnTable(Building2);
+        const settlement = rollOnTable(Settlement1) + " " + rollOnTable(Settlement2);
+        const sites = rollOnTable(Sites1) + " " + rollOnTable(Sites2);
+        const dangers = rollOnTable(Dangers1) + " " + rollOnTable(Dangers2);
+        const curiosities = rollOnTable(Curiosities1) + " " + rollOnTable(Curiosities2);
+        const barriers = rollOnTable(Barriers1) + " " + rollOnTable(Barriers2);
+        const factions = rollOnTable(Factions1) + " " + rollOnTable(Factions2);
+
+
+
+
+
+        // Update HTML
+        document.getElementById("building").textContent = building;
+        document.getElementById("settlement").textContent = settlement;
+        document.getElementById("sites").textContent = sites;
+        document.getElementById("dangers").textContent = dangers;
+        document.getElementById("curiosities").textContent = curiosities;
+        document.getElementById("barriers").textContent = barriers;
+        document.getElementById("factions").textContent = factions;
+    });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+        // Set column headers (can be customized)
+        const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+
+        
+    // Generate table for Building1
+    generateTable("building1-table-container", "Building1", Building11, columnHeaders);
+
+    // Generate table for Building2
+    generateTable("building2-table-container", "Building2", Building22, columnHeaders);
+
+    // Generate table for Settlement1
+    generateTable("settlement1-table-container", "Settlement1", Settlement11, columnHeaders);
+
+    // Generate table for Settlement2
+    generateTable("settlement2-table-container", "Settlement2", Settlement22, columnHeaders);
+
+    // Generate table for Sites1
+    generateTable("sites1-table-container", "Sites1", Sites11, columnHeaders);
+
+    // Generate table for Sites2
+    generateTable("sites2table-table-container", "Sites2", Sites22, columnHeaders);
+
+    // Generate table for Dangers1
+    generateTable("dangers1-table-container", "Dangers1", Dangers11, columnHeaders);
+
+    // Generate table for Dangers2
+    generateTable("dangers2-table-container", "Dangers2", Dangers22, columnHeaders);
+
+    // Generate table for Curiosities1
+    generateTable("curiosities1-table-container", "Curiosities1", Curiosities11, columnHeaders);
+
+    // Generate table for Curiosities2
+    generateTable("curiosities2-table-container", "Curiosities2", Curiosities22, columnHeaders);
+
+    // Generate table for Barriers1
+    generateTable("barriers1-table-container", "Barriers1", Barriers11, columnHeaders);
+
+    // Generate table for Barriers2
+    generateTable("barriers2-table-container", "Barriers2", Barriers22, columnHeaders);
+
+    // Generate table for Factions1
+    generateTable("factions1-table-container", "Factions1", Factions11, columnHeaders);
+
+    // Generate table for Factions2
+    generateTable("factions2-table-container", "Factions2", Factions22, columnHeaders);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ========================= Player Heritage Code =========================
 document.getElementById("generate-heritage-button").addEventListener("click", function () {
     const area = getRandomItem(heritageAreas[Math.floor(Math.random() * heritageAreas.length)]);
@@ -684,7 +834,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+
+// ========================= Berserker Crucibles =========================
   
+   
+  
+    /**
+     * Populates the Berserker sheet when the button is clicked.
+     */
+    document.getElementById("generate-berserker").addEventListener("click", function() {
+      const frenzySource = rollOnTable(frenzySources) + " and/or " + rollOnTable(frenzySources) ;
+      const scarsResult = rollOnTable(scars)+ " and/or " + rollOnTable(scars) ;
+  
+      document.getElementById("berserker-frenzy-source").textContent = frenzySource;
+      document.getElementById("berserker-scars").textContent = scarsResult;
+    });
+  
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const columnHeaders1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+        const columnHeaders2 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+    generateTable("frenzy-sources-table-container", "Frenzy Sources", [frenzySources], columnHeaders1);
+    generateTable("scars-table-container", "Scars", [scars], columnHeaders2);
+  });
+
+
+
+
+// ========================= Cleric Crucibles =========================
+  
+    document.getElementById("generate-cleric").addEventListener("click", function() {
+        const DietyName = rollOnTable(godNames) ;
+        const DietyDisposition = rollOnTable(godDispositions);
+        const DietyDomain = rollOnTable(godDomains) ;
+        const DietyNarrative = "Your gods name is " + DietyName + " They have a " + DietyDisposition + " disposition, they reside over the " + DietyDomain + " domain ";
+
+        document.getElementById("diety-Name").textContent = DietyName;
+        document.getElementById("diety-Disposition").textContent = DietyDisposition;
+        document.getElementById("diety-Domain").textContent = DietyDomain;
+        document.getElementById("diety-Narrative").textContent = DietyNarrative;
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+
+    generateTable("druid-tells1", "Druid Tells", DruidTells2, columnHeaders);
+    generateTable("druid-herb1", "Druid Herb Prefix", TalentHerbalism11, columnHeaders);
+    generateTable("druid-herb2", "Druid Herb Suffix", TalentHerbalism22, columnHeaders);
+ 
+
+    });
+
+
+// ========================= Druid Crucibles =========================
+
+document.getElementById("generate-druid").addEventListener("click", function() {
+    const tells = rollOnTable(DruidTells) ;
+    const herb1 = rollOnTable(TalentHerbalism1);
+    const herb2 = rollOnTable(TalentHerbalism2);
+
+    const herbName = herb1 + herb2;
+
+    document.getElementById("druid-tells").textContent = tells;
+    document.getElementById("druid-herb").textContent = herbName;
+ 
+
+    
+
+
+});
+
+
+
+
+
+
+  // ========================= Utilities Start Here ==================================================================================================================================================================
+
 
 //=====new roller   =========================
 
@@ -1109,7 +1335,7 @@ function updatePoolDisplay(poolName, rolledDice) {
     const dataStr = JSON.stringify(pools);
     const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
-    const exportFileName = 'pools.json';
+    const exportFileName = 'Grimtool_Pools_Data.json';
 
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
@@ -1187,11 +1413,8 @@ importFileElement.addEventListener("change", handleFileImport);
 
 
 
-//========================== Character Keeper =======================
+//========================== Character/Notes Keeper  =======================================================================================================
 
-
-// js/script.js
-console.log("Character Keeper script running...");
 
 const classSelect = document.getElementById("class-select");
 const addCharacterInstanceButton = document.getElementById("add-character-instance");
@@ -1337,13 +1560,13 @@ addCharacterInstanceButton.addEventListener("click", function () {
     }
 });
 
-// ========================= Load, Save, Import Code =========================
+// ========================= Load, Save, Import Code character keeper =========================
 
 function saveData() {
     const dataStr = JSON.stringify(characterData);
     const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
-    const exportFileName = 'character_data.json';
+    const exportFileName = 'Grimtools_data.json';
 
     const linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
@@ -1389,12 +1612,12 @@ function changeData(event) {
     reader.readAsText(file);
 }
 
-// ========================= Load Save Import Event Listener =========================
+// ========================= Load Save Import Event Listener  character keeper=========================
 saveCharacterDataButton.addEventListener("click", saveData);
 importCharacterDataButton.addEventListener("click", importData);
 importFileCharacterElement.addEventListener("change", changeData);
 
-// ========================= Initialize =========================
+// ========================= Initialize character keeper =========================
 //We need the character to load to the site.
 document.addEventListener("DOMContentLoaded", function () {
     // Load at start
@@ -1402,7 +1625,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+
+
+    
     const tabPanelsContainer = document.getElementById("character-tab-panels-container");
+
+
 
     if (tabPanelsContainer) {
         tabPanelsContainer.addEventListener("wheel", function(event) {
@@ -1412,7 +1640,69 @@ document.addEventListener("DOMContentLoaded", function() {
         console.warn("#character-tab-panels-container not found!");
     }
 });
-    
+ 
+
+
+
+
+//============================= Resources  ===================================================================
+
+
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const resourceList = document.getElementById("resource-list");
+  
+    function displayAllFiles() {
+      // Group files by directory
+      const filesByDirectory = {};
+  
+      for (const resource of window.resources) {
+        if (resource.type === "file") {
+          const directory = resource.name.substring(0, resource.name.lastIndexOf('/')); // Extract directory
+          if (!filesByDirectory[directory]) {
+            filesByDirectory[directory] = [];
+          }
+          filesByDirectory[directory].push(resource);
+        }
+      }
+  
+      // Display files by directory
+      for (const directory in filesByDirectory) {
+        if (filesByDirectory.hasOwnProperty(directory)) {
+          // Create directory header
+          const directoryHeader = document.createElement("h3");
+          directoryHeader.textContent = directory;
+          resourceList.appendChild(directoryHeader);
+  
+          // Create download links for files in the directory
+          const files = filesByDirectory[directory];
+          for (const file of files) {
+            const listItem = document.createElement("li");
+            const downloadLink = document.createElement("a");
+            downloadLink.href = file.name; // Path to file
+            downloadLink.textContent = file.name.split('/').pop(); // Display filename
+            downloadLink.download = file.name.split('/').pop(); // Ensure download
+            listItem.appendChild(downloadLink);
+            resourceList.appendChild(listItem);
+          }
+        }
+      }
+    }
+  
+    displayAllFiles(); // Call the function to display all files
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 // ========================= Tab Management =========================
 // Tab Management
 function openTab(evt, tabName) {

@@ -92,6 +92,7 @@ body {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    overscroll-behavior: contain; 
 }
 
 /* ========================= Button Styling ========================= */
@@ -300,6 +301,75 @@ button:hover {
     font-weight: bold;
 }
 
+#GMTables button#generate-tableMash-button {
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+/* ========================= Season Styling ========================= */
+
+  #SeasonTables p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+  }
+
+  #SeasonTables button#GenerateSeasons {
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+
+
+
+/* ========================= Exploration Styling ========================= */
+
+#ExplorationTables h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  #ExplorationTables h3 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+  }
+  
+  #ExplorationTables p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+  }
+  
+  #ExplorationTables button#GenerateExploration {
+    color: white;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  
+ 
+
+
+
+
+
+
+
 /* ========================= Vibe Check Result Styling ========================= */
 
 #divCenterText {
@@ -345,14 +415,13 @@ button:hover {
 
 /*=======class Styling=========*/
 
-/*=======bard Styling=========*/
 
 /*=======Bard Styling=========*/
 
 #Bard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit columns, min width 300px */
-    gap: 10px; /* Space between grid items */
+    gap: 20px; /* Space between grid items */
     padding: 20px; /* Add padding around the content, like GM tabs */
     border: 1px solid #ccc; /* Add a border, like GM tabs */
     background-color: #f9f9f9; /* Light background, like GM tabs */
@@ -390,25 +459,116 @@ button:hover {
     margin-right: 5px;
 }
 
-#bard-styles-table-container,
-#bard-tunes-table-container,
-#bard-impacts-table-container,
-#bard-instruments-table-container {
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-    margin-right: 2%;
+
+
+
+/*=======berserker Styling=========*/
+
+
+
+/* Styles for the Berserker Character Generator Tab */
+
+#Berserker h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-/* Corrected media query for smaller screens */
-@media (max-width: 768px) {
-    #bard-styles-table-container,
-    #bard-tunes-table-container,
-    #bard-impacts-table-container,
-    #bard-instruments-table-container {
-        width: 100%; /* Full width on smaller screens */
-    }
+#Berserker h3 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
 }
+
+#Berserker p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+#Berserker button#generate-berserker {
+
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+#Berserker button#generate-berserker:hover {
+    background-color: #600404; /* A darker shade for hover effect */
+}
+
+/* Styles for the tables (Frenzy Sources and Scars) */
+#frenzy-sources-table-container,
+#scars-table-container {
+    margin-bottom: 2em;
+    overflow-x: auto; /* Enables horizontal scrolling for larger tables */
+}
+
+#frenzy-sources-table-container .data-table,
+#scars-table-container .data-table {
+    table-layout: fixed; /* Fixed widths for columns */
+    width: 100%;        /* Ensure table fills its container */
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    border: 1px solid #5e503f; /* A subtle border */
+}
+
+#frenzy-sources-table-container .data-table th,
+#scars-table-container .data-table th,
+#frenzy-sources-table-container .data-table td,
+#scars-table-container .data-table td {
+    width: auto;       /* Example: Evenly distribute columns if there are 6 columns */
+    min-width: 100px; /* Minimum column width to prevent scrunching */
+    max-width: 200px; /* Maximum column width */
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* prevent really long names*/
+
+}
+
+
+
+
+/*=======Cleric Styling=========*/
+
+#Cleric p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+#Cleric button#generate-cleric {
+
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/*=======Druid Styling=========*/
+
+#Druid p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+#Druid button#generate-druid {
+
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
 
 
 /* ========================= Roller Styling ========================= */
@@ -666,6 +826,7 @@ button:hover {
     cursor: pointer;
     margin-right: 2px;
     border-radius: 5px 5px 0 0;
+    overscroll-behavior: auto; /*   <--- the trick    */ 
 }
 
 .character-tab-button.active {
@@ -683,6 +844,8 @@ button:hover {
        /* Add these lines to make it fill available height: */
     height: calc(100vh - 50px); /* Adjust 50px to account for the banner and tab buttons height, or another appropriate number */
     overflow: hidden;       /* Hide any content that overflows the panel */
+    overscroll-behavior: auto;  /*   <--- the trick    */ 
+
 }
 
 /* Container for the embed (important for full-screen) */
@@ -693,6 +856,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    overscroll-behavior: auto; 
 }
 
 /* Make the iframe fill the container */
@@ -700,16 +864,89 @@ button:hover {
     width: 100%;
     height: 100%;
     border: none; /* Optional: remove iframe border */
+    overscroll-behavior: auto;  /*   <--- the trick    */ 
+
 }
 
 #character-tab-panels-container {
     position:relative;
-    overscroll-behavior: none; /*   <--- the trick    */ }
+    overscroll-behavior: auto;  /*   <--- the trick    */ }
+
+
+
+
+/* ========================= Notes Container Styling ========================= */
+
+
+.note-tab-button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 2px;
+    border-radius: 5px 5px 0 0;
+    overscroll-behavior: auto;
+    /*   <--- the trick    */
+}
+
+.note-tab-button.active {
+    background-color: #bbb;
+}
+
+/* Existing CSS for tab panels */
+.note-tab-panel {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: -1px;
+    display: none;
+    /* Changed to relative positioning */
+    position: relative;
+    /* Add these lines to make it fill available height: */
+    height: calc(100vh - 50px);
+    /* Adjust 50px to account for the banner and tab buttons height, or another appropriate number */
+    overflow: hidden;
+    /* Hide any content that overflows the panel */
+    overscroll-behavior: auto;
+    /*   <--- the trick    */
+}
+
+/* Container for the embed (important for full-screen) */
+.note-embed-container {
+    /* Position absolutely to take up the full space of the parent */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: auto;
+}
+
+/* Make the iframe fill the container */
+.note-embed-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* Optional: remove iframe border */
+    overscroll-behavior: auto;
+    /*   <--- the trick    */
+}
+
+#note-tab-panels-container {
+    position: relative;
+    overscroll-behavior: auto;
+    /*   <--- the trick    */
+}
+
+
 
 /* ========================= Interpretation Styling ========================= */
 #GMtableInterpretation {
     font-style: italic;
     color: green;
+}
+
+:focus {
+    outline: none;
 }
 
 

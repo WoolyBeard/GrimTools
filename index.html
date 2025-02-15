@@ -27,15 +27,19 @@
             <button class="tablinks" onclick="openTab(event, 'GrimUtils')">Utilities</button>
         </div>
 
-        <!-- ========================= Grimwild GM Crucible ========================= -->
+        <!-- ========================= Grimwild GM Crucibles ========================= -->
         <div id="GrimwildGM" class="tabcontent">
             <!-- Sub Tab Navigation -->
             <div class="tab">
                 <button class="tablinks" onclick="openSubTab(event, 'GMTables')">GM Crucible</button>
+                <button class="tablinks" onclick="openSubTab(event, 'SeasonTables')">Seasons Crucible</button>
+                <button class="tablinks" onclick="openSubTab(event, 'ExplorationTables')">Exploration Crucible</button>
+               
+
+
             </div>
 
             
-
             <!-- GM Crucible Tab Content -->
             <div id="GMTables" class="tabcontent">
                 <h2>GM Crucible</h2>
@@ -56,6 +60,92 @@
             <div id="Second-table-container"></div>
 
             </div> <!-- Closing for GMTables tabcontent-->
+
+
+            <!-- Seasons Crucible Tab Content -->
+
+            <div id="SeasonTables" class="tabcontent">
+                <h2>Season Generation</h2>
+        
+                <button id="GenerateSeasons">Generate Season</button>
+                <h3>Spring:</h3>
+                <p id="spring"></p>
+                <h3>Summer:</h3>
+                <p id="summer"></p>
+                <h3>Fall:</h3>
+                <p id="fall"></p>
+                <h3>Winter:</h3>
+                <p id="winter"></p>
+
+
+                   <!-- Table container goes here -->
+                   <div id="springprefix-table-container"></div>
+                   <div id="springsuffix-table-container"></div>
+   
+                   <div id="summerprefix-table-container"></div>
+                   <div id="summersuffix-table-container"></div>
+           
+                   <div id="fallprefix-table-container"></div>
+                   <div id="fallsuffix-table-container"></div>
+   
+                   <div id="winterprefix-table-container"></div>
+                   <div id="wintersuffix-table-container"></div>
+
+            </div> <!-- Closing for GMTables tabcontent-->
+
+            
+            <!-- Exploration Crucible Tab Content -->
+
+            <div id="ExplorationTables" class="tabcontent">
+                <h2>Exploration Generation</h2>
+                <button id="GenerateExploration">Generate Exploration</button>
+                <h3>Building:</h3>
+                <p id="building"></p>
+                <h3>Settlement:</h3>
+                <p id="settlement"></p>
+                <h3>Sites:</h3>
+                <p id="sites"></p>
+                <h3>Dangers:</h3>
+                <p id="dangers"></p>
+                <h3>Curiosities:</h3>
+                <p id="curiosities"></p>
+                <h3>Barriers:</h3>
+                <p id="barriers"></p>
+                <h3>Factions:</h3>
+                <p id="factions"></p>
+                
+
+                <!-- Table container goes here -->
+                <div id="building1-table-container"></div>
+                <div id="building2-table-container"></div>
+
+                <div id="settlement1-table-container"></div>
+                <div id="settlement2-table-container"></div>
+
+                <div id="sites1-table-container"></div>
+                <div id="sites2table-table-container"></div>
+
+                <div id="dangers1-table-container"></div>
+                <div id="dangers2-table-container"></div>
+
+                <div id="curiosities1-table-container"></div>
+                <div id="curiosities2-table-container"></div>
+
+                <div id="barriers1-table-container"></div>
+                <div id="barriers2-table-container"></div>
+
+                <div id="factions1-table-container"></div>
+                <div id="factions2-table-container"></div>
+
+            </div>
+
+
+                   
+           
+
+          
+
+
         </div> <!-- Closing for GrimwildGM tabcontent-->
 
              
@@ -92,7 +182,10 @@
             <div id="heritage-descriptors-table-container"></div>
             <div id="heritageDenizens-table-container"></div>
 
-            </div> <!-- Closing for Heritage tabcontent-->
+        </div> <!-- Closing for Heritage tabcontent-->
+
+
+
         </div> <!-- Closing for GrimwildPlayer tabcontent-->
 
 
@@ -154,18 +247,107 @@
 
         <!-- Berserker Tab Content -->
         <div id="Berserker" class="tabcontent">
-            <p>Content for Berserker will go here later.</p>
+            <h2>Berserker Crucibles</h2>
+            <button id="generate-berserker">Generate Berserker</button>
+
+            <h3>Frenzy Source:</h3>
+            <p id="berserker-frenzy-source"></p>
+
+            <h3>Scars:</h3>
+            <p id="berserker-scars"></p>
+
+            <h2>Roll Tables</h2>
+
+            <!-- Table container goes here -->
+            <div id="frenzy-sources-table-container"></div>
+            <div id="scars-table-container"></div>
         </div>
 
         <!-- Cleric Tab Content -->
         <div id="Cleric" class="tabcontent">
-            <p>Content for Cleric will go here later.</p>
+            <h2>Cleric Crucibles</h2>
+            <h5>Below is a custom crucible for generating a god.</h5>
+            <button id="generate-cleric">Generate Cleric God and Domain</button>
+
+            <h3>Name:</h3>
+            <p id="diety-Name"></p>
+
+            <h3>Disposition:</h3>
+            <p id="diety-Disposition"></p>
+
+            <h3>Domain:</h3>
+            <p id="diety-Domain"></p>
+
+            <h3>You Worship:</h3>
+            <p id="diety-Narrative"></p>
+
+            <h3></h3>
+            <h3>Choose One:</h3>
+            <p id="domain-data">
+                <strong>BLESSING</strong><br>
+                Description: Enhance with buffs, provide utility, and bring good fortune.<br>
+                Tenets: Pick up the weak and vulnerable. Create happiness when none exists.<br>
+                Magic: Bless a battlehammer. Walk on water. Fill the forlorn duke's heart with hope.<br><br>
+              
+                <strong>DIVINATION</strong><br>
+                Description: Unveil secrets, provide foresight, and commune with spirits.<br>
+                Tenets: Uncover and share hidden truths. Respect and act on divine signs.<br>
+                Magic: Find a safe path. Reveal where the thief is hiding. Know tomorrow's weather.<br><br>
+              
+                <strong>DOMINION</strong><br>
+                Description: Influence, command, and control sentient creatures.<br>
+                Tenets: Enforce peace and stability. Inspire others through your actions.<br>
+                Magic: Convince someone to help you. Make someone forget something. Calm an angry mob.<br><br>
+              
+                <strong>HEALING</strong><br>
+                Description: Heal wounds, cure diseases, and wash away mental anguish.<br>
+                Tenets: Bring healing to those truly in need. Comfort the distressed.<br>
+                Magic: Heal a broken bone. Relieve someone of stress. Stop the bleeding.<br><br>
+              
+                <strong>RADIANCE</strong><br>
+                Description: Dispel darkness with light and purge evil with holy fire.<br>
+                Tenets: Burn out corruption at its source. Point out the error in someone's ways.<br>
+                Magic: Cauterize a wound. Destroy a skeleton. Reveal an invisible enemy.<br><br>
+              
+                <strong>WARDING</strong><br>
+                Description: Provide protection and defense for those in need.<br>
+                Tenets: Protect those who cannot defend themselves & strengthen communities.<br>
+                Magic: Shield an ally from harm. Block a doorway. Create sentries.<br><br>
+              
+                <strong>WRATH</strong><br>
+                Description: Inflict damage and curses upon those deserving.<br>
+                Tenets: Deliver punishment to those deserving it, keeping your mercy for the rare few worth saving.<br>
+                Magic: Shatter the killer's weapon. Blind a traitor. Curse a thief with misfortune.
+              </p>
+
         </div>
+
+
+
+
 
         <!-- Druid Tab Content -->
         <div id="Druid" class="tabcontent">
-            <p>Content for Druid will go here later.</p>
+            <h2>Druid Crucibles</h2>
+            <button id="generate-druid">Generate Druid Crucibles</button>
+
+            <h3>Druid Tells:</h3>
+            <p id="druid-tells"></p>
+
+            <h3>Druid Herb Touchstone:</h3>
+            <p id="druid-herb"></p>
+
+            <h2>Roll Tables</h2>
+
+            <!-- Table container goes here -->
+            <div id="druid-tells1"></div>
+            <div id="druid-herb1"></div>
+            <div id="druid-herb2"></div>
         </div>
+
+
+
+
 
          <!-- Fighter Tab Content -->
          <div id="Fighter" class="tabcontent">
@@ -214,7 +396,9 @@
             <button class="tablinks" onclick="openSubTab(event, 'Roller')">Dice Roller</button>
             <button class="tablinks" onclick="openSubTab(event, 'ExcalidrawBoard')">Excalidraw Board</button>
             <button class="tablinks" onclick="openSubTab(event, 'PoolCalculator')">Pools</button>
-            <button class="tablinks" onclick="openSubTab(event, 'CharacterKeeper')">Character Keeper</button>
+            <button class="tablinks" onclick="openSubTab(event, 'CharacterKeeper')">Character/Notes Keeper</button>
+            <!-- <button class="tablinks" onclick="openSubTab(event, 'Notes')">Notes</button> -->
+            <button class="tablinks" onclick="openSubTab(event, 'Resources')">Resources</button>
 
 
         
@@ -330,24 +514,25 @@
 
                 
         <div id="CharacterKeeper" class="tabcontent">
-            <h2>Character Keeper</h2>
-
-        <label for="class-select">Select Class:</label>
+            <h2>Character/Notes Keeper</h2>
+            <h5>Loads information from Google docs and embeds it within this page for ease of access during sessions.</h5>
+        <label for="class-select">Select:</label>
 
             <select id="class-select">
-                <option value="">Choose a Class</option>
+                <option value="">Choose Note/Class</option>
+                <option value="notes">Note</option>
                 <option value="bard">Bard</option>
                 <option value="berserker">Berserker</option>
             
             </select> 
 
-            <label for="character-name">Character Name:</label>
-            <input type="text" id="character-name" placeholder="Enter Character Name">
+            <label for="character-name">Name:</label>
+            <input type="text" id="character-name" placeholder="Enter Name">
 
             <label for="sheet-url">Google Sheet URL:</label>
             <input type="text" id="sheet-url" placeholder="Enter Google Sheet URL">
 
-            <button id="add-character-instance">Add Character Instance</button>
+            <button id="add-character-instance">Add Instance</button>
 
                   
             <!-- Character Instances Container -->
@@ -362,17 +547,27 @@
 
     
 
-            <button id="save-character-data">Save Character Data</button>
-            <button id="import-character-data">Import Character Data</button>
+            <button id="save-character-data">Export Data</button>
+            <button id="import-character-data">Import Data</button>
             <input type="file" id="import-file-character" accept=".json" style="display: none;">
         </div>
     
 
-           
-            
- 
+        
+        
+        <!-- ========================= Resources Tab ========================= -->
+        <div id="Resources" class="tabcontent">
 
-    </div> <!-- Closing for GrimUtils tabcontent-->
+            <h2>Resources</h2>
+            <div id="resource-browser">
+              <ul id="resource-list"></ul>
+            </div>
+         
+        </div> 
+                
+  
+
+    </div>   <!-- Closing for GrimUtils tabcontent-->
     
 
         <!-- ========================= GrimTools Crucibles (All Generators) ========================= -->
@@ -762,9 +957,11 @@
 </div><!-- Closing for GrimTools tabcontent-->
    
     <footer class="footer">
-        <img id="moxie-logo" src="img/madewithmoxie.png" alt="Made with Moxie Logo">
+       
         <p class="copyright">
-            GrimTools is based on Moxie © 2024 by J.D. Maxwell and Oddity Press, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.
+            GrimTools is based on Moxie © 2024 by J.D. Maxwell and Oddity Press, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.<br>
+            GrimTools Created By: Wooly and Jezter6 Downloadable Resources by J.D Maxwell formatted by the community.<br>
+            <img id="moxie-logo" src="img/madewithmoxie.png" alt="Made with Moxie Logo">
         </p>
     </footer>
           
@@ -781,7 +978,14 @@
 <script src="js/treasure-map-data.js"></script>
 <script src="js/vibe-check-data.js"></script>
 <script src="js/player-heritage-data.js"></script>
+<script src="js/season-data.js"></script>
+<script src="js/exploration-data.js"></script>
 
+
+
+
+<!-- Resources loaded in -->
+<script src="js/resources.js"></script>
 
 <!-- Load Mozilla PDF library before the classes  NEEDS A WEBSERVER 
 <script src="https://unpkg.com/pdfjs-dist@4.10.38/build/pdf.mjs" type="module"></script> --> 
@@ -789,14 +993,15 @@
 
 <!-- Load class data files - ensure arrays are created before script.js -->
 <script src="js/Classes/bardCrucibles.js"></script>
-
+<script src="js/Classes/berserkerCrucibles.js"></script>
+<script src="js/Classes/clericCrucibles.js"></script>
+<script src="js/Classes/druidCrucibles.js"></script>
 
  <!-- React and ReactDOM -->
  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
  <!-- Excalidraw -->
- <link rel="stylesheet" href="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.min.css">
  <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
 
 
