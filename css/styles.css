@@ -459,6 +459,17 @@ button:hover {
     margin-right: 5px;
 }
 
+#Bard button#generate-bard {
+
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
 
 
 
@@ -568,6 +579,179 @@ button:hover {
     font-size: 1em;
     margin-bottom: 1em;
 }
+
+
+/*=======Fighter Styling=========*/
+
+/* General styling for the fighter section */
+#Fighter p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Fighter button#generate-fighter {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/*=======monk Styling=========*/
+
+/* General styling for the fighter section */
+#Monk p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Monk button#generate-monk {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/*=======paladin Styling=========*/
+
+/* General styling for the fighter section */
+#Paladin p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Paladin button#generate-paladin {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/*=======Ranger Styling=========*/
+
+/* General styling for the fighter section */
+#Ranger p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Ranger button#generate-ranger {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+
+/*=======Rogue Styling=========*/
+
+/* General styling for the fighter section */
+#Rogue p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Rogue button#generate-rogue {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+
+
+/*=======Sorcerer Styling=========*/
+
+/* General styling for the fighter section */
+#Sorcerer p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Rogue button#generate-wild-surge {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+
+/*=======Warlock Styling=========*/
+
+
+/* General styling for the fighter section */
+#Warlock p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Warlock button#generate-warlock-patron {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/*=======Wizard Styling=========*/
+
+
+/* General styling for the fighter section */
+#Wizard p {
+    border: 1px solid #ddd;
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+/* Styling for the generate fighter button */
+#Wizard button#generate-wizard-spell {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+
+
+
+
+
 
 
 

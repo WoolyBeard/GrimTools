@@ -202,6 +202,7 @@
             <button class="tablinks" onclick="openSubTab(event, 'Monk')">Monk</button>
             <button class="tablinks" onclick="openSubTab(event, 'Paladin')">Paladin</button>
             <button class="tablinks" onclick="openSubTab(event, 'Ranger')">Ranger</button>
+            <button class="tablinks" onclick="openSubTab(event, 'Rogue')">Rogue</button>
             <button class="tablinks" onclick="openSubTab(event, 'Sorcerer')">Sorcerer</button>
             <button class="tablinks" onclick="openSubTab(event, 'Warlock')">Warlock</button>
             <button class="tablinks" onclick="openSubTab(event, 'Wizard')">Wizard</button>
@@ -210,7 +211,9 @@
         <!-- Bard Tab Content -->
         <div id="Bard" class="tabcontent">
         
-            <h2>Bard Song Crucibles</h2>
+            <h2>Bard Crucibles</h2>
+            <h5> “Remember this, son, if you forget everything else. A poet is a musician who can't sing. Words have to find a man's mind before they can touch his heart, and some men's minds are woeful small targets. Music touches their hearts directly no matter how small or stubborn the mind of the man who listens.”</h5>
+            <h5> - Patrick Rothfuss, The Name of the Wind </h5>
             <button id="generate-bard-performance">Generate Performance</button>
 
             <!-- Results Display -->
@@ -248,6 +251,10 @@
         <!-- Berserker Tab Content -->
         <div id="Berserker" class="tabcontent">
             <h2>Berserker Crucibles</h2>
+            <h5>"He was like a tiger among baboons as he leaped, side-stepped and spun, offering an ever-moving target, while his ax wove a shining wheel of death about him."</h5>
+            <h5> - Robert E Howard</h5>
+
+
             <button id="generate-berserker">Generate Berserker</button>
 
             <h3>Frenzy Source:</h3>
@@ -265,9 +272,14 @@
 
         <!-- Cleric Tab Content -->
         <div id="Cleric" class="tabcontent">
+
             <h2>Cleric Crucibles</h2>
-            <h5>Below is a custom crucible for generating a god.</h5>
+            <h5>"Judge them for what they wished to be,” he begged the Father of Gods, “not what the world made of them.”</h5>
+            <h5> - Nicholas Eames, Kings of the Wyld </h5>
+
             <button id="generate-cleric">Generate Cleric God and Domain</button>
+            <h6>Below is a custom crucible for generating a god not from the grimwild core books.</h6>
+
 
             <h3>Name:</h3>
             <p id="diety-Name"></p>
@@ -329,6 +341,8 @@
         <!-- Druid Tab Content -->
         <div id="Druid" class="tabcontent">
             <h2>Druid Crucibles</h2>
+            <h5>"A society grows great when old men plant trees whose shade they know they shall never sit in."</h5>
+            <h5> - Ancient Greek Provrb</h5>
             <button id="generate-druid">Generate Druid Crucibles</button>
 
             <h3>Druid Tells:</h3>
@@ -351,38 +365,191 @@
 
          <!-- Fighter Tab Content -->
          <div id="Fighter" class="tabcontent">
-            <p>Content for Fighter will go here later.</p>
+            <h2>Fighter Crucibles</h2>
+            <h5>“Fafhrd stopped, again wiped right hand on robe, and held it out. "Name's Fafhrd. Ef ay ef aitch ar dee."</h5>
+            <h5> - Fafhrd Just Faf-erd</h5>
+
+            <button id="generate-fighter">Fighter Weapon Crucible</button>
+
+            <h3>Fighter Weapon Origin 1:</h3>
+            <p id="origin1"></p>
+
+            <h3>Fighter Weapon Origin 2:</h3>
+            <p id="origin2"></p>
+            
+            <h3>The Weapons Origin:</h3>
+            <p id="origin-combo"></p>
+
+            
+
+            <!-- Table container goes here -->
+            <div id="origin-table"></div>
         </div>
+
+
 
          <!-- Monk Tab Content -->
          <div id="Monk" class="tabcontent">
-            <p>Content for Monk will go here later.</p>
+       
+                <h2>Monk Crucibles</h2>
+                <h5>"Learn the form, but seek the formless. Hear the soundless. Learn it all, then forget it all. Learn The Way, then find your own way."</h5>
+                <h5> - Silent Monk The Forbidden Kingdom </h5>
+                <button id="generate-monk">Generate martial arts Style</button>
+    
+                <h3>The Concept:</h3>
+                <p id="concept"></p>
+    
+                <h3>Stances and Moves:</h3>
+                <p id="stances"></p>
+                
+                <h3>Weapons:</h3>
+                <p id="weapons"></p>
+
+                <!-- Table container goes here -->
+                <div id="concept-table"></div>
+                <div id="stances-table"></div>
+                <div id="weapon-table"></div>
         </div>
 
          <!-- Paladin Tab Content -->
          <div id="Paladin" class="tabcontent">
-            <p>Content for Paladin will go here later.</p>
+
+                <h2>Paladin Crucibles</h2>
+                <h5> "Blade with whom I have lived, blade with whom I now die, serve right and justice one last time, seek one last heart of evil, still one last life of pain. Cut well, old friend, and then farewell."</h5>
+                <h5> - Sir Orin Neville Smythe</h5>
+
+                <button id="generate-paladin">Generate Paladin Tenets</button>
+
+                <h3>I Bring:</h3>
+                <p id="tenet-bring"></p>
+
+                <h3>For the:</h3>
+                <p id="tenet-forthe"></p>
+
+                <h3>Because of:</h3>
+                <p id="tenet-because"></p>
+
+                <h3>My Oath:</h3>
+                <p id="tenet-combo"></p>
+
+                <!-- Table container goes here -->
+                <div id="bring-table"></div>
+                <div id="forthe-table"></div>
+                <div id="because-table"></div>
         </div>
 
          <!-- Ranger Tab Content -->
          <div id="Ranger" class="tabcontent">
-            <p>Content for Ranger will go here later.</p>
+
+                    <h2>Ranger Crucibles</h2>
+                    <h5>"Allow me to begin again." Drizzt said. “Greetings, Akar Kessell.” He bowed low.  “I am Drizzt Do’Urden, ranger of Gwaeron Windstrom, guardian of Icewind Dale.  I have come to kill you.”</h5>
+                    <h5> - Drizzt Do'Urden </h5>
+                    <button id="generate-ranger">Generate Ranger Trap</button>
+
+                    <h3>Trap Effect:</h3>
+                    <p id="trap-effect"></p>
+
+                    <h3>Trap Trigger:</h3>
+                    <p id="trap-trigger"></p>
+
+                 <!-- Table container goes here -->
+                <div id="effect-table"></div>
+                <div id="trigger-table"></div>
+
+               
         </div>
 
-         <!-- Sorcerer Tab Content -->
-         <div id="Sorcerer" class="tabcontent">
-            <p>Content for Sorcerer will go here later.</p>
+         <!-- Rogue Tab Content -->
+         <div id="Rogue" class="tabcontent">
+
+            <h2>Rogue Crucible</h2>
+            <h5>"There is no struggle too vast, no odds too overwhelming, for even should we fail - should we fall - we will know that we have lived." </h5>
+            <h5> - Steven Erikson</h5>
+            <button id="generate-rogue">Generate Rogue Crime</button>
+
+            <h3>Crime Severity:</h3>
+            <p id="crime-severity"></p>
+
+            <h3>Crime Nature:</h3>
+            <p id="crime-nature"></p>
+
+            <h3>Crime Reputation:</h3>
+            <p id="crime-reputation"></p>
+
+            <!-- Table containers -->
+            <div id="severity-table"></div>
+            <div id="nature-table"></div>
+            <div id="reputation-table"></div>
+
         </div>
 
-         <!-- Warlock Tab Content -->
-         <div id="Warlock" class="tabcontent">
-            <p>Content for Warlock will go here later.</p>
-        </div>
+  
+        <!-- Sorcerer Tab Content -->
+            <div id="Sorcerer" class="tabcontent">
 
+                <h2>Sorcerer Generator</h2>
+                <h5>"If you won't bow before a sultan, then you will cower before a sorcerer! Genie, my second wish: I wish to be the most powerful sorcerer in the world!"</h5>
+                <h5> - Jafar, Aladdin</h5>
+                <button id="generate-wild-surge">Generate Wild Surge</button>
+
+                <h3>Surge Effect 1:</h3>
+                <p id="surge-effect1"></p>
+
+                <h3>Surge Effect 2:</h3>
+                <p id="surge-effect2"></p>
+
+                <!-- Table containers -->
+                <div id="surge1-table"></div>
+                <div id="surge2-table"></div>
+            </div>
+
+       <!-- Warlock Tab Content -->
+            <div id="Warlock" class="tabcontent">
+
+                <h2>Warlock Patron Generator</h2>
+                <h5>"It is the magician's bargain: give up our soul, get power in return. But once our souls, that is, ourselves, have been given up, the power thus conferred will not belong to us. We shall in fact be the slaves and puppets of that to which we have given our souls."</h5>
+                <h5> —CS Lewis in The Abolition of Man</h5>
+                <button id="generate-warlock-patron">Generate Warlock Patron</button>
+
+                <h3>Patron's Nature:</h3>
+                <p id="patron-nature"></p>
+
+                <h3>Patron's Desire:</h3>
+                <p id="patron-desire"></p>
+
+                <!-- Table containers -->
+                <div id="desire-table"></div>
+             
+                <div id="nature2-table"></div>
+            </div>
+
+      
          <!-- Wizard Tab Content -->
-         <div id="Wizard" class="tabcontent">
-            <p>Content for Wizard will go here later.</p>
-        </div>
+            <div id="Wizard" class="tabcontent">
+
+                <h2>Wizard Crucibles</h2>
+                <h5>"The senior wizard in a world of magic had the same prospects of long-term employment as a pogo stick tester in a minefield."</h5>
+                <h5> ― Terry Pratchett, Moving Pictures</h5>
+                <button id="generate-wizard-spell">Generate Wizard Spell</button>
+
+                <h3>Spell Style:</h3>
+                <p id="spell-style"></p>
+
+                <h3>Spell Essence:</h3>
+                <p id="spell-essence"></p>
+
+                <h3>Spell Form:</h3>
+                <p id="spell-form"></p>
+
+                <h3>Spell School:</h3>
+                <p id="spell-school"></p>
+
+                <!-- Table containers -->
+                <div id="style-table"></div>
+                <div id="essence-table"></div>
+                <div id="form-table"></div>
+                <div id="school-table"></div>
+            </div>
         </div>
         
 
@@ -996,6 +1163,18 @@
 <script src="js/Classes/berserkerCrucibles.js"></script>
 <script src="js/Classes/clericCrucibles.js"></script>
 <script src="js/Classes/druidCrucibles.js"></script>
+<script src="js/Classes/fighterCrucibles.js"></script>
+<script src="js/Classes/monkCrucibles.js"></script>
+<script src="js/Classes/paladinCrucibles.js"></script>
+<script src="js/Classes/rangerCrucibles.js"></script>
+<script src="js/Classes/rogueCrucibles.js"></script>
+<script src="js/Classes/sorcererCrucibles.js"></script>
+<script src="js/Classes/warlockCrucibles.js"></script>
+<script src="js/Classes/wizardCrucibles.js"></script>
+
+
+
+
 
  <!-- React and ReactDOM -->
  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>

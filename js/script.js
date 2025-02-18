@@ -904,10 +904,208 @@ document.getElementById("generate-druid").addEventListener("click", function() {
 
 });
 
+// ========================= Fighter Crucibles =========================
+
+document.getElementById("generate-fighter").addEventListener("click", function() {
+    const originOne = rollOnTable(FighterWeaponOrigin);
+    const originTwo = rollOnTable(FighterWeaponOrigin);
+
+    const origin12Combo = `This weapon is both ${originOne.toLowerCase()} and ${originTwo.toLowerCase()}.`;
+
+    document.getElementById("origin1").textContent = originOne;
+    document.getElementById("origin2").textContent = originTwo;
+    document.getElementById("origin-combo").textContent = origin12Combo;
+
+});
+    document.addEventListener("DOMContentLoaded", function() {
+        const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+
+    generateTable("origin-table", "Fighter Weapon Origin", FighterWeaponOriginMulti, columnHeaders);
+
+});
 
 
 
+// ========================= Monk Crucibles =========================
 
+document.getElementById("generate-monk").addEventListener("click", function() {
+    const concept1 = rollOnTable(MonkStyleConcept2);
+    const concept2 = rollOnTable(MonkStyleConcept2);
+    const style1 = rollOnTable(MonkStyleMoves);
+    const style2 = rollOnTable(MonkStyleMoves);
+    const style3 = rollOnTable(MonkStyleMoves);
+    const weapon1 = rollOnTable(MonkStyleWeapons);
+    const weapon2 = rollOnTable(MonkStyleWeapons);
+
+    const ConceptCombo = `This martial arts style is bassed on the concept of ${concept1.toLowerCase()} and/or ${concept2.toLowerCase()}.`;
+    const StyleCombo = `It feature stances and moves like: ${style1.toLowerCase()} , ${style2.toLowerCase()}  and ${style3.toLowerCase()}.`;
+    const WeaponCombo = `It often makes use of weapons like: ${weapon1.toLowerCase()} or ${weapon2.toLowerCase()}.`;
+
+    document.getElementById("concept").textContent = ConceptCombo;
+    document.getElementById("stances").textContent = StyleCombo;
+    document.getElementById("weapons").textContent = WeaponCombo;
+
+});
+    document.addEventListener("DOMContentLoaded", function() {
+        const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+
+    generateTable("concept-table", "Concept", MonkStyleConceptNA, columnHeaders);
+    generateTable("stances-table", "Stances", MonkStyleMovesNA, columnHeaders);
+    generateTable("weapon-table", "Weapons", MonkStyleWeaponsNA, columnHeaders);
+
+
+});
+
+
+
+// ========================= Paladin Crucibles =========================
+
+
+document.getElementById("generate-paladin").addEventListener("click", function() {
+    const bring = rollOnTable(PaladinTenetBring);
+    const forThe = rollOnTable(PaladinTenetForThe);
+    const because = rollOnTable(PaladinTenetBecause); // Access the first sub-array
+
+    const tenetStatement = `I will bring ${bring.toLowerCase()} for the ${forThe.toLowerCase()} because of ${because.toLowerCase()}....`;
+
+    document.getElementById("tenet-bring").textContent = `${bring}`;
+    document.getElementById("tenet-forthe").textContent = `${forThe}`;
+    document.getElementById("tenet-because").textContent = `${because}`; // Display selected "because" value
+
+    document.getElementById("tenet-combo").textContent = `${tenetStatement}`; 
+
+
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+
+    generateTable("bring-table", "Bring", PaladinTenetBringNA, columnHeaders);
+    generateTable("forthe-table", "For The", PaladinTenetForTheNA, columnHeaders);
+    generateTable("because-table", "Because", [PaladinTenetBecause], columnHeaders);
+
+});
+
+
+// ========================= Ranger Crucibles =========================
+
+
+document.getElementById("generate-ranger").addEventListener("click", function() {
+    const trapEffect = rollOnTable(RangerTrap1);
+    const trapTrigger = rollOnTable(RangerTrap2);
+
+    const trapDescription = `A ${trapEffect.toLowerCase()} trap triggered by a ${trapTrigger.toLowerCase()}.`;
+
+    document.getElementById("trap-effect").textContent = `Effect: ${trapEffect}`;
+    document.getElementById("trap-trigger").textContent = `Trigger: ${trapTrigger}`;
+
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+
+    generateTable("effect-table", "Effects", [RangerTrap1], columnHeaders);
+    generateTable("trigger-table", "Trigger", [RangerTrap2], columnHeaders);
+
+
+});
+
+
+// ========================= Rogue Crucibles =========================
+
+
+
+document.getElementById("generate-rogue").addEventListener("click", function() {
+    const crimeSeverity = rollOnTable(RogueCrimeSeverity);
+    const crimeNature = rollOnTable(RogueCrimeNature);
+    const crimeReputation = rollOnTable(RogueCrimeReputation);
+
+
+    document.getElementById("crime-severity").textContent = `Severity: ${crimeSeverity}`;
+    document.getElementById("crime-nature").textContent = `Nature: ${crimeNature}`;
+    document.getElementById("crime-reputation").textContent = `Reputation: ${crimeReputation}`;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+
+    generateTable("severity-table", "Crime Severity", [RogueCrimeSeverityNA], columnHeaders);
+    generateTable("nature-table", "Crime Nature", RogueCrimeNatureNA, columnHeaders);
+    generateTable("reputation-table", "Crime Reputation", [RogueCrimeReputationNA], columnHeaders);
+});
+
+
+// ========================= Sorcerer Crucibles =========================
+
+document.getElementById("generate-wild-surge").addEventListener("click", function() {
+    const surgeEffect1 = rollOnTable(SorcerorWildSurge1);
+    const surgeEffect2 = rollOnTable(SorcerorWildSurge2);
+
+   // const surgeDescription = `A wild surge causes a sudden ${surgeEffect1.toLowerCase()} as ${surgeEffect2.toLowerCase()}.`;
+
+    document.getElementById("surge-effect1").textContent = ` ${surgeEffect1}`;
+    document.getElementById("surge-effect2").textContent = ` ${surgeEffect2}`;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+
+    generateTable("surge1-table", "Surge Effect 1", SorcerorWildSurge1NA, columnHeaders);
+    generateTable("surge2-table", "Surge Effect 2", SorcerorWildSurge2NA, columnHeaders);
+});
+
+// ========================= Warlock Crucibles =========================
+
+
+document.getElementById("generate-warlock-patron").addEventListener("click", function() {
+    const patronNature = rollOnTable(WarlockPatronNature);
+    const patronDesire = rollOnTable(WarlockPatronDesire);
+
+   // const patronDescription = `This Warlock's Patron is an entity of ${patronNature.toLowerCase()}, driven by a desire for ${patronDesire.toLowerCase()}.`;
+
+    document.getElementById("patron-nature").textContent = `Nature: ${patronNature}`;
+    document.getElementById("patron-desire").textContent = `Desire: ${patronDesire}`;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+
+    generateTable("desire-table", "Patron Desire", WarlockPatronDesireNA, columnHeaders);
+
+    generateTable("nature2-table", "Patron Nature", WarlockPatronNatureNA, columnHeaders);
+
+});
+
+
+// ========================= Wizard Crucibles =========================
+
+
+document.getElementById("generate-wizard-spell").addEventListener("click", function() {
+    const spellStyle = rollOnTable(WizardSpellStyle);
+    const spellEssence = rollOnTable(WizardSpellEssence);
+    const spellForm = rollOnTable(WizardSpellForm);
+    const spellSchool = rollOnTable(WizardSpellSchool);
+
+   // const spellDescription = `This spell manifests as a ${spellStyle.toLowerCase()} ${spellForm.toLowerCase()} of ${spellEssence.toLowerCase()}. It is of the school of ${spellSchool.toLowerCase()}.`;
+
+    document.getElementById("spell-style").textContent = ` ${spellStyle}`;
+    document.getElementById("spell-essence").textContent = ` ${spellEssence}`;
+    document.getElementById("spell-form").textContent = ` ${spellForm}`;
+    document.getElementById("spell-school").textContent = ` ${spellSchool}`;
+
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"]; // Define column headers
+    const columnHeadersSchool = ["Abjuration","Conjuration","Divination","Enchantment","Evocation","Illusion","Necromancy","Transmutation"] // for the spell school cause there is only one entry per array.
+
+    generateTable("style-table", "Spell Style", WizardSpellStyleNA, columnHeaders);
+    generateTable("essence-table", "Spell Essence", WizardSpellEssenceNA, columnHeaders);
+    generateTable("form-table", "Spell Form", WizardSpellFormNA, columnHeaders);
+    generateTable("school-table", "Spell School", WizardSpellSchoolNA, columnHeadersSchool);
+
+
+});
 
   // ========================= Utilities Start Here ==================================================================================================================================================================
 
@@ -1648,7 +1846,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //============================= Resources  ===================================================================
 
 
-// script.js
+
 document.addEventListener("DOMContentLoaded", function() {
     const resourceList = document.getElementById("resource-list");
   
