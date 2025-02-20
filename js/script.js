@@ -394,6 +394,24 @@ document.getElementById("generate-party-bonds-button").addEventListener("click",
     document.getElementById("whoAreTryingTo").textContent = getRandomItem(whoAreTryingTo[whoTryingToRow]);
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Set column headers (can be customized)
+    const columnHeaders = ["1", "2", "3", "4", "5", "6"];
+    const columnHeaders2 = ["1", "2"];
+
+    generateTable("characters-table", "The Characters Are:", charactersAre, columnHeaders);
+
+    generateTable("bound-table", "Bound Together By:", boundTogetherBy, columnHeaders2);
+
+    generateTable("whoare-table", "Who Are They?", whoAre, columnHeaders);
+
+    generateTable("andbattle-table", "They Battle", andBattle, columnHeaders);
+
+    generateTable("whoare", "What Are They Trying to Do?", whoAreTryingTo, columnHeaders);
+});
+
+
 // ========================= Monster Generation =========================
 
 /**

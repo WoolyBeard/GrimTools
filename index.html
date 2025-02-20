@@ -690,6 +690,17 @@
                 <option value="notes">Note</option>
                 <option value="bard">Bard</option>
                 <option value="berserker">Berserker</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <option value="fighter">Fighter</option>
+                <option value="monk">Monk</option>
+                <option value="paladin">Paladin</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">Rogue</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="wizard">Wizard</option>
+
             
             </select> 
 
@@ -984,29 +995,43 @@
                 </div>
             </div>
 
-         <!-- ========================= Party Bonds Tab Content ========================= -->
 
-           <div id="PartyBonds" class="tabcontent">
+        <!-- ========================= Party Bonds Tab Content ========================= -->
+
+        <div id="PartyBonds" class="tabcontent">
             <h2>Party Bonds Generator</h2>
             <button id="generate-party-bonds-button">Generate Party Bonds</button>
 
             <div id="party-bonds-results">
                 <div class="party-bonds-result">
                     <strong>Characters Are:</strong> <span id="charactersAre"></span>
+                    <div class="adventure-description">An idea of the character(s) background. Pick one or both.</div>
                 </div>
                 <div class="party-bonds-result">
                     <strong>Bound Together By:</strong> <span id="boundTogetherBy"></span>
+                    <div class="adventure-description">What is the backstory of how the party got together and why?</div>
                 </div>
                 <div class="party-bonds-result">
                     <strong>Who Are:</strong> <span id="whoAre"></span>
+                    <div class="adventure-description">What is the party's main campaign goal?</div>
                 </div>
                 <div class="party-bonds-result">
                     <strong>And Battle:</strong> <span id="andBattle"></span>
+                    <div class="adventure-description">What are the enemy 'factions'? Pick one or more</div>
                 </div>
                 <div class="party-bonds-result">
                     <strong>Who Are Trying To:</strong> <span id="whoAreTryingTo"></span>
+                    <div class="adventure-description">What are the enemy factions goals? </div>
                 </div>
             </div>
+
+
+                     <!-- Table container goes here -->
+                     <div id="characters-table"></div>
+                     <div id="bound-table"></div>
+                     <div id="whoare-table"></div>
+                     <div id="andbattle-table"></div>
+                     <div id="whoare-table"></div>
         </div>
 
         <!-- Monster Tab Content -->
